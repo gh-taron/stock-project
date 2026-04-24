@@ -1,0 +1,25 @@
+### Create an enterprise
+POST http://localhost:8083/enterprises
+Content-Type: application/json
+
+{
+  "phoneNumber": "+32412345678",
+  "email": "contact@exemple.com",
+  "address": "123 Rue du Commerce, Bruxelles",
+  "name": "Entreprise Ghazaryan"
+}
+
+### Update Enterprise (PATCH)
+PATCH http://localhost:8083/enterprises/updateEnterprise/1
+Content-Type: application/json
+
+{
+  "phoneNumber": "+32498765432",
+  "email": "nouveau@email.com",
+  "address": "456 Rue de la Paix, Bruxelles",
+  "name": "Entreprise Maj"
+}
+
+
+### Get an entrerprise by ID
+GET http://localhost:8083/enterprises/1

@@ -1,0 +1,40 @@
+<div class="container my-5">
+  <h3 class="mb-4 text-center">Produits du fournisseur n°{{ idFournisseur }}</h3>
+
+  <div *ngIf="produits.length === 0" class="text-center text-muted">
+    Aucun produit trouvé pour ce fournisseur.
+  </div>
+
+  <div class="row row-cols-1 row-cols-md-3 g-4" *ngIf="produits.length > 0">
+    <div class="col" *ngFor="let produit of produits">
+      <div class="card h-100 shadow-sm bg-light border-0">
+        <div class="card-body d-flex flex-column justify-content-between">
+          <div>
+            <h5 class="card-title fw-bold text-primary">{{ produit.name }}</h5>
+            <p class="card-text"><strong>Type :</strong> {{ produit.type }}</p>
+            <p class="card-text"><strong>Description :</strong> {{ produit.description || '—' }}</p>
+            <p class="card-text"><strong>Disponible :</strong> {{ produit.quantity }} unités</p>
+          </div>
+
+          <div class="mt-3">
+            <input type="number"
+                   [(ngModel)]="produit.quantiteCommande"
+                   [max]="produit.quantity"
+                   min="1"
+                   class="form-control mb-2"
+                   placeholder="Quantité">
+            <button class="btn btn-primary w-100 btn-sm"
+                    (click)="commanderProduit(produit)"
+                    [disabled]="produit.quantity === 0">
+              Commander
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="mt-4 text-center">
+    <a routerLink="/supplier" class="btn btn-outline-secondary">← Retour aux fournisseurs</a>
+  </div>
+</div>

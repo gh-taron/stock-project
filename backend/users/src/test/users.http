@@ -1,0 +1,24 @@
+### Create new user
+POST http://localhost:8082/users
+Content-Type: application/json
+
+{
+  "firstname": "Taron",
+  "lastname": "Ghazaryan",
+  "email": "taron@example.com",
+  "phoneNumber": "+32412345678",
+  "password": "monMotDePasseUltraSecret123",
+  "role" : "admin",
+  "idEnterprise": 1
+}
+
+### Delete an user
+DELETE http://localhost:8082/users/1
+Content-Type: application/json
+
+
+### Get user by id
+GET http://localhost:8082/users/2
+
+### Get user by email
+GET http://localhost:8082/users/findByEmail/admin@vinci.be

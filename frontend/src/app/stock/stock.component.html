@@ -1,0 +1,66 @@
+<div class="container my-5">
+  <div class="row mb-4">
+    <div class="col-md-6 offset-md-3">
+      <input type="text"
+             class="form-control"
+             placeholder="Rechercher un produit..."
+             [(ngModel)]="searchTerm"
+             (input)="filterStocks()" />
+    </div>
+  </div>
+
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col-md-4">
+      <div class="card h-100 p-4 shadow-sm" *ngIf="!isAdding" (click)="isAdding = true" style="cursor: pointer;">
+        <div class="d-flex flex-column align-items-center justify-content-center h-100">
+          <div class="bg-light d-flex align-items-center justify-content-center rounded-circle mb-3" style="width: 70px; height: 70px;">
+            <span class="fs-3 text-secondary">+</span>
+          </div>
+          <h5 class="text-muted mb-3">Ajouter un produit</h5>
+        </div>
+      </div>
+
+      <div class="card p-3 bg-light" *ngIf="isAdding">
+        <input [(ngModel)]="newProduct.name" class="form-control mb-2" placeholder="Nom du produit" />
+        <input [(ngModel)]="newProduct.type" class="form-control mb-2" placeholder="Type" />
+        <textarea [(ngModel)]="newProduct.description" class="form-control mb-2" placeholder="Description"></textarea>
+        <input [(ngModel)]="quantity" type="number" class="form-control mb-2" placeholder="Quantité en stock" min="0" />
+        <div class="d-flex justify-content-between">
+          <button class="btn btn-success btn-sm" (click)="addProduct()">Ajouter</button>
+          <button class="btn btn-secondary btn-sm" (click)="isAdding = false">Annuler</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col" *ngFor="let product of filteredStocks">
+      <div class="card h-100 bg-dark text-white shadow-sm p-3 d-flex flex-column justify-content-between" style="min-height: 230px;">
+        <div class="d-flex justify-content-end gap-2">
+          <button class="btn btn-outline-primary btn-sm" (click)="startEdit(product)">
+            <i class="bi bi-pencil-fill"></i>
+          </button>
+          <button class="btn btn-outline-danger btn-sm" (click)="deleteProduct(product)">
+            <i class="bi bi-x-circle-fill"></i>
+          </button>
+        </div>
+
+        <div *ngIf="editingProductId === product.id">
+          <input [(ngModel)]="editProductData.name" class="form-control mb-2" placeholder="Nom" />
+          <input [(ngModel)]="editProductData.type" class="form-control mb-2" placeholder="Type" />
+          <textarea [(ngModel)]="editProductData.description" class="form-control mb-2" placeholder="Description"></textarea>
+          <input [(ngModel)]="editProductData.quantity" type="number" class="form-control mb-2" placeholder="Quantité" min="0" />
+          <div class="d-flex justify-content-between">
+            <button class="btn btn-success btn-sm" (click)="saveEdit()">Sauvegarder</button>
+            <button class="btn btn-secondary btn-sm" (click)="cancelEdit()">Annuler</button>
+          </div>
+        </div>
+
+        <div *ngIf="editingProductId !== product.id">
+          <h5 class="fw-bold text-uppercase">Nom : {{ product.name }}</h5>
+          <p>Type : {{ product.type }}</p>
+          <p>Description : {{ product.description }}</p>
+          <p>Quantité : {{ product.quantity }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

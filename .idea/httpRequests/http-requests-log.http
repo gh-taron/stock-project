@@ -1,0 +1,958 @@
+POST http://localhost:8081/auth/register
+Content-Type: application/json
+Content-Length: 204
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "firstname": "Taron",
+  "lastname": "Ghazaryan",
+  "email": "taron@example.com",
+  "phoneNumber": "+32412345678",
+  "password": "monMotDePasseUltraSecret123",
+  "role" : "admin",
+  "idEnterprise": 1
+}
+
+<> 2025-05-14T153113.400.txt
+
+###
+
+POST http://localhost:8081/auth/register
+Content-Type: application/json
+Content-Length: 204
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "firstname": "Taron",
+  "lastname": "Ghazaryan",
+  "email": "taron@example.com",
+  "phoneNumber": "+32412345678",
+  "password": "monMotDePasseUltraSecret123",
+  "role" : "admin",
+  "idEnterprise": 1
+}
+
+<> 2025-05-14T153112-5.400.txt
+
+###
+
+POST http://localhost:8081/auth/register
+Content-Type: application/json
+Content-Length: 204
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "firstname": "Taron",
+  "lastname": "Ghazaryan",
+  "email": "taron@example.com",
+  "phoneNumber": "+32412345678",
+  "password": "monMotDePasseUltraSecret123",
+  "role" : "admin",
+  "idEnterprise": 1
+}
+
+<> 2025-05-14T153112-4.400.txt
+
+###
+
+POST http://localhost:8081/auth/register
+Content-Type: application/json
+Content-Length: 204
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "firstname": "Taron",
+  "lastname": "Ghazaryan",
+  "email": "taron@example.com",
+  "phoneNumber": "+32412345678",
+  "password": "monMotDePasseUltraSecret123",
+  "role" : "admin",
+  "idEnterprise": 1
+}
+
+<> 2025-05-14T153112-3.400.txt
+
+###
+
+POST http://localhost:8081/auth/register
+Content-Type: application/json
+Content-Length: 204
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "firstname": "Taron",
+  "lastname": "Ghazaryan",
+  "email": "taron@example.com",
+  "phoneNumber": "+32412345678",
+  "password": "monMotDePasseUltraSecret123",
+  "role" : "admin",
+  "idEnterprise": 1
+}
+
+<> 2025-05-14T153112-2.400.txt
+
+###
+
+POST http://localhost:8081/auth/register
+Content-Type: application/json
+Content-Length: 204
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "firstname": "Taron",
+  "lastname": "Ghazaryan",
+  "email": "taron@example.com",
+  "phoneNumber": "+32412345678",
+  "password": "monMotDePasseUltraSecret123",
+  "role" : "admin",
+  "idEnterprise": 1
+}
+
+<> 2025-05-14T153112-1.400.txt
+
+###
+
+POST http://localhost:8081/auth/register
+Content-Type: application/json
+Content-Length: 204
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "firstname": "Taron",
+  "lastname": "Ghazaryan",
+  "email": "taron@example.com",
+  "phoneNumber": "+32412345678",
+  "password": "monMotDePasseUltraSecret123",
+  "role" : "admin",
+  "idEnterprise": 1
+}
+
+<> 2025-05-14T153112.400.txt
+
+###
+
+POST http://localhost:8081/auth/register
+Content-Type: application/json
+Content-Length: 204
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "firstname": "Taron",
+  "lastname": "Ghazaryan",
+  "email": "taron@example.com",
+  "phoneNumber": "+32412345678",
+  "password": "monMotDePasseUltraSecret123",
+  "role" : "admin",
+  "idEnterprise": 1
+}
+
+<> 2025-05-14T153111-4.400.txt
+
+###
+
+POST http://localhost:8081/auth/register
+Content-Type: application/json
+Content-Length: 204
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "firstname": "Taron",
+  "lastname": "Ghazaryan",
+  "email": "taron@example.com",
+  "phoneNumber": "+32412345678",
+  "password": "monMotDePasseUltraSecret123",
+  "role" : "admin",
+  "idEnterprise": 1
+}
+
+<> 2025-05-14T153111-3.400.txt
+
+###
+
+POST http://localhost:8081/auth/register
+Content-Type: application/json
+Content-Length: 204
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "firstname": "Taron",
+  "lastname": "Ghazaryan",
+  "email": "taron@example.com",
+  "phoneNumber": "+32412345678",
+  "password": "monMotDePasseUltraSecret123",
+  "role" : "admin",
+  "idEnterprise": 1
+}
+
+<> 2025-05-14T153111-2.400.txt
+
+###
+
+POST http://localhost:8081/auth/register
+Content-Type: application/json
+Content-Length: 204
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "firstname": "Taron",
+  "lastname": "Ghazaryan",
+  "email": "taron@example.com",
+  "phoneNumber": "+32412345678",
+  "password": "monMotDePasseUltraSecret123",
+  "role" : "admin",
+  "idEnterprise": 1
+}
+
+<> 2025-05-14T153111-1.400.txt
+
+###
+
+POST http://localhost:8081/auth/register
+Content-Type: application/json
+Content-Length: 204
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "firstname": "Taron",
+  "lastname": "Ghazaryan",
+  "email": "taron@example.com",
+  "phoneNumber": "+32412345678",
+  "password": "monMotDePasseUltraSecret123",
+  "role" : "admin",
+  "idEnterprise": 1
+}
+
+<> 2025-05-14T153111.400.txt
+
+###
+
+POST http://localhost:8081/auth/register
+Content-Type: application/json
+Content-Length: 204
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "firstname": "Taron",
+  "lastname": "Ghazaryan",
+  "email": "taron@example.com",
+  "phoneNumber": "+32412345678",
+  "password": "monMotDePasseUltraSecret123",
+  "role" : "admin",
+  "idEnterprise": 1
+}
+
+<> 2025-05-14T153110-1.400.txt
+
+###
+
+POST http://localhost:8081/auth/register
+Content-Type: application/json
+Content-Length: 204
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "firstname": "Taron",
+  "lastname": "Ghazaryan",
+  "email": "taron@example.com",
+  "phoneNumber": "+32412345678",
+  "password": "monMotDePasseUltraSecret123",
+  "role" : "admin",
+  "idEnterprise": 1
+}
+
+<> 2025-05-14T153110.400.txt
+
+###
+
+POST http://localhost:8081/auth/login
+Content-Type: application/json
+Content-Length: 75
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+"email": "taron@example.com",
+"password": "monMotDePasseUltraSecret123"
+}
+
+<> 2025-05-14T153109-4.200.json
+
+###
+
+POST http://localhost:8081/auth/login
+Content-Type: application/json
+Content-Length: 75
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+"email": "taron@example.com",
+"password": "monMotDePasseUltraSecret123"
+}
+
+<> 2025-05-14T153109-3.200.json
+
+###
+
+POST http://localhost:8081/auth/login
+Content-Type: application/json
+Content-Length: 75
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+"email": "taron@example.com",
+"password": "monMotDePasseUltraSecret123"
+}
+
+<> 2025-05-14T153109-1.200.json
+
+###
+
+POST http://localhost:8081/auth/login
+Content-Type: application/json
+Content-Length: 75
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+"email": "taron@example.com",
+"password": "monMotDePasseUltraSecret123"
+}
+
+<> 2025-05-14T153109.200.json
+
+###
+
+POST http://localhost:8081/auth/login
+Content-Type: application/json
+Content-Length: 75
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+"email": "taron@example.com",
+"password": "monMotDePasseUltraSecret123"
+}
+
+<> 2025-05-14T153108-2.200.json
+
+###
+
+POST http://localhost:8081/auth/login
+Content-Type: application/json
+Content-Length: 75
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+"email": "taron@example.com",
+"password": "monMotDePasseUltraSecret123"
+}
+
+<> 2025-05-14T153108-1.200.json
+
+###
+
+POST http://localhost:8081/auth/login
+Content-Type: application/json
+Content-Length: 75
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+"email": "taron@example.com",
+"password": "monMotDePasseUltraSecret123"
+}
+
+<> 2025-05-14T153108.200.json
+
+###
+
+POST http://localhost:8081/auth/login
+Content-Type: application/json
+Content-Length: 75
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+"email": "taron@example.com",
+"password": "monMotDePasseUltraSecret123"
+}
+
+<> 2025-05-14T153107-1.200.json
+
+###
+
+POST http://localhost:8081/auth/login
+Content-Type: application/json
+Content-Length: 75
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+"email": "taron@example.com",
+"password": "monMotDePasseUltraSecret123"
+}
+
+<> 2025-05-14T153107.200.json
+
+###
+
+POST http://localhost:8081/auth/register
+Content-Type: application/json
+Content-Length: 204
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "firstname": "Taron",
+  "lastname": "Ghazaryan",
+  "email": "taron@example.com",
+  "phoneNumber": "+32412345678",
+  "password": "monMotDePasseUltraSecret123",
+  "role" : "admin",
+  "idEnterprise": 1
+}
+
+<> 2025-05-14T153105.400.txt
+
+###
+
+POST http://localhost:8081/auth/login
+Content-Type: application/json
+Content-Length: 75
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+"email": "taron@example.com",
+"password": "monMotDePasseUltraSecret123"
+}
+
+<> 2025-05-14T153102.200.json
+
+###
+
+POST http://localhost:8081/auth/register
+Content-Type: application/json
+Content-Length: 204
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "firstname": "Taron",
+  "lastname": "Ghazaryan",
+  "email": "taron@example.com",
+  "phoneNumber": "+32412345678",
+  "password": "monMotDePasseUltraSecret123",
+  "role" : "admin",
+  "idEnterprise": 1
+}
+
+<> 2025-05-14T153101.200.json
+
+###
+
+POST http://localhost:8083/enterprises
+Content-Type: application/json
+Content-Length: 150
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "phoneNumber": "+32412345678",
+  "email": "contact@exemple.com",
+  "address": "123 Rue du Commerce, Bruxelles",
+  "name": "Entreprise Ghazaryan"
+}
+
+<> 2025-05-14T153026.200.json
+
+###
+
+GET http://localhost:8083/enterprises/1
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+<> 2025-05-14T153024.200.json
+
+###
+
+PATCH http://localhost:8083/enterprises/updateEnterprise/1
+Content-Type: application/json
+Content-Length: 141
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "phoneNumber": "+32498765432",
+  "email": "nouveau@email.com",
+  "address": "456 Rue de la Paix, Bruxelles",
+  "name": "Entreprise Maj"
+}
+
+<> 2025-05-14T153023-1.200.json
+
+###
+
+POST http://localhost:8083/enterprises
+Content-Type: application/json
+Content-Length: 150
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "phoneNumber": "+32412345678",
+  "email": "contact@exemple.com",
+  "address": "123 Rue du Commerce, Bruxelles",
+  "name": "Entreprise Ghazaryan"
+}
+
+<> 2025-05-14T153023.200.json
+
+###
+
+POST http://localhost:8081/auth/register
+Content-Type: application/json
+Content-Length: 204
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "firstname": "Taron",
+  "lastname": "Ghazaryan",
+  "email": "taron@example.com",
+  "phoneNumber": "+32412345678",
+  "password": "monMotDePasseUltraSecret123",
+  "role" : "admin",
+  "idEnterprise": 1
+}
+
+<> 2025-05-14T150542.500.json
+
+###
+
+POST http://localhost:8081/auth/register
+Content-Type: application/json
+Content-Length: 204
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "firstname": "Taron",
+  "lastname": "Ghazaryan",
+  "email": "taron@example.com",
+  "phoneNumber": "+32412345678",
+  "password": "monMotDePasseUltraSecret123",
+  "role" : "admin",
+  "idEnterprise": 1
+}
+
+<> 2025-05-14T150537.500.json
+
+###
+
+POST http://localhost:8081/auth/register
+Content-Type: application/json
+Content-Length: 204
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "firstname": "Taron",
+  "lastname": "Ghazaryan",
+  "email": "taron@example.com",
+  "phoneNumber": "+32412345678",
+  "password": "monMotDePasseUltraSecret123",
+  "role" : "admin",
+  "idEnterprise": 1
+}
+
+<> 2025-05-14T150536.500.json
+
+###
+
+POST http://localhost:8081/auth/register
+Content-Type: application/json
+Content-Length: 204
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "firstname": "Taron",
+  "lastname": "Ghazaryan",
+  "email": "taron@example.com",
+  "phoneNumber": "+32412345678",
+  "password": "monMotDePasseUltraSecret123",
+  "role" : "admin",
+  "idEnterprise": 1
+}
+
+<> 2025-05-14T150535.500.json
+
+###
+
+POST http://localhost:8081/auth/register
+Content-Type: application/json
+Content-Length: 204
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "firstname": "Taron",
+  "lastname": "Ghazaryan",
+  "email": "taron@example.com",
+  "phoneNumber": "+32412345678",
+  "password": "monMotDePasseUltraSecret123",
+  "role" : "admin",
+  "idEnterprise": 1
+}
+
+<> 2025-05-14T150534.500.json
+
+###
+
+POST http://localhost:8081/auth/register
+Content-Type: application/json
+Content-Length: 204
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "firstname": "Taron",
+  "lastname": "Ghazaryan",
+  "email": "taron@example.com",
+  "phoneNumber": "+32412345678",
+  "password": "monMotDePasseUltraSecret123",
+  "role" : "admin",
+  "idEnterprise": 1
+}
+
+<> 2025-05-14T150533.500.json
+
+###
+
+POST http://localhost:8081/auth/register
+Content-Type: application/json
+Content-Length: 204
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "firstname": "Taron",
+  "lastname": "Ghazaryan",
+  "email": "taron@example.com",
+  "phoneNumber": "+32412345678",
+  "password": "monMotDePasseUltraSecret123",
+  "role" : "admin",
+  "idEnterprise": 1
+}
+
+<> 2025-05-14T150530.500.json
+
+###
+
+POST http://localhost:8083/enterprises
+Content-Type: application/json
+Content-Length: 150
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "phoneNumber": "+32412345678",
+  "email": "contact@exemple.com",
+  "address": "123 Rue du Commerce, Bruxelles",
+  "name": "Entreprise Ghazaryan"
+}
+
+<> 2025-05-14T150526.200.json
+
+###
+
+POST http://localhost:8081/auth/login
+Content-Type: application/json
+Content-Length: 75
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+"email": "taron@example.com",
+"password": "monMotDePasseUltraSecret123"
+}
+
+<> 2025-05-14T150436.200.json
+
+###
+
+POST http://localhost:8081/auth/register
+Content-Type: application/json
+Content-Length: 204
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "firstname": "Taron",
+  "lastname": "Ghazaryan",
+  "email": "taron@example.com",
+  "phoneNumber": "+32412345678",
+  "password": "monMotDePasseUltraSecret123",
+  "role" : "admin",
+  "idEnterprise": 1
+}
+
+<> 2025-05-14T150434.200.json
+
+###
+
+POST http://localhost:8083/enterprises
+Content-Type: application/json
+Content-Length: 150
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "phoneNumber": "+32412345678",
+  "email": "contact@exemple.com",
+  "address": "123 Rue du Commerce, Bruxelles",
+  "name": "Entreprise Ghazaryan"
+}
+
+<> 2025-05-14T150430.200.json
+
+###
+
+POST http://localhost:8081/auth/login
+Content-Type: application/json
+Content-Length: 75
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+"email": "taron@example.com",
+"password": "monMotDePasseUltraSecret123"
+}
+
+<> 2025-05-14T150209.200.json
+
+###
+
+POST http://localhost:8081/auth/register
+Content-Type: application/json
+Content-Length: 204
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "firstname": "Taron",
+  "lastname": "Ghazaryan",
+  "email": "taron@example.com",
+  "phoneNumber": "+32412345678",
+  "password": "monMotDePasseUltraSecret123",
+  "role" : "admin",
+  "idEnterprise": 1
+}
+
+<> 2025-05-14T150202.200.json
+
+###
+
+POST http://localhost:8081/auth/register
+Content-Type: application/json
+Content-Length: 204
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "firstname": "Taron",
+  "lastname": "Ghazaryan",
+  "email": "taron@example.com",
+  "phoneNumber": "+32412345678",
+  "password": "monMotDePasseUltraSecret123",
+  "role" : "admin",
+  "idEnterprise": 1
+}
+
+<> 2025-05-14T145241.500.json
+
+###
+
+POST http://localhost:8081/auth/register
+Content-Type: application/json
+Content-Length: 204
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "firstname": "Taron",
+  "lastname": "Ghazaryan",
+  "email": "taron@example.com",
+  "phoneNumber": "+32412345678",
+  "password": "monMotDePasseUltraSecret123",
+  "role" : "admin",
+  "idEnterprise": 1
+}
+
+<> 2025-05-14T145240-1.500.json
+
+###
+
+POST http://localhost:8081/auth/register
+Content-Type: application/json
+Content-Length: 204
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "firstname": "Taron",
+  "lastname": "Ghazaryan",
+  "email": "taron@example.com",
+  "phoneNumber": "+32412345678",
+  "password": "monMotDePasseUltraSecret123",
+  "role" : "admin",
+  "idEnterprise": 1
+}
+
+<> 2025-05-14T145240.500.json
+
+###
+
+POST http://localhost:8081/auth/register
+Content-Type: application/json
+Content-Length: 204
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "firstname": "Taron",
+  "lastname": "Ghazaryan",
+  "email": "taron@example.com",
+  "phoneNumber": "+32412345678",
+  "password": "monMotDePasseUltraSecret123",
+  "role" : "admin",
+  "idEnterprise": 1
+}
+
+<> 2025-05-14T145239.500.json
+
+###
+
+POST http://localhost:8081/auth/register
+Content-Type: application/json
+Content-Length: 204
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "firstname": "Taron",
+  "lastname": "Ghazaryan",
+  "email": "taron@example.com",
+  "phoneNumber": "+32412345678",
+  "password": "monMotDePasseUltraSecret123",
+  "role" : "admin",
+  "idEnterprise": 1
+}
+
+<> 2025-05-14T145238.500.json
+
+###
+
+POST http://localhost:8081/auth/login
+Content-Type: application/json
+Content-Length: 75
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+"email": "taron@example.com",
+"password": "monMotDePasseUltraSecret123"
+}
+
+<> 2025-05-14T145237.500.json
+
+###
+
+POST http://localhost:8081/auth/register
+Content-Type: application/json
+Content-Length: 204
+Connection: Keep-Alive
+User-Agent: Apache-HttpClient/4.5.14 (Java/17.0.9)
+Accept-Encoding: br,deflate,gzip,x-gzip
+
+{
+  "firstname": "Taron",
+  "lastname": "Ghazaryan",
+  "email": "taron@example.com",
+  "phoneNumber": "+32412345678",
+  "password": "monMotDePasseUltraSecret123",
+  "role" : "admin",
+  "idEnterprise": 1
+}
+
+<> 2025-05-14T145233.500.json
+
+###
+

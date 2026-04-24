@@ -1,0 +1,11 @@
+{
+  "id": 1,
+  "firstname": "Taron",
+  "lastname": "Ghazaryan",
+  "email": "taron@example.com",
+  "phoneNumber": "+32412345678",
+  "password": "$2a$10$ovxzDVKWvvxx6VB/KGNwNe2BRMLOK/1XEdoDfiGs4lpZNOrtjVdZi",
+  "role": "admin",
+  "idEnterprise": 1,
+  "photoUrl": null
+}

@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="df140352-59c6-4583-865c-0a4353785940" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="AnnotationType" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="2wokpCwbBfrzXuZ8Jr9kRlsSrUa" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="false" />
+    <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;HTTP Request.All in enterprises.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.authentications | Login an user.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.authentications | Register new user.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.enterprises | Create an enterprise.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.enterprises | Get an entrerprise by ID.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.enterprises | Update Enterprise (PATCH).executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.users | Create new user.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.users | Delete an user.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.users | Get user by email.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.users | Get user by id.executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Spring Boot.AuthenticationsApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.EnterprisesApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.EurekaServerApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.OrdersApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.ProductsApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.StocksApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.SuppliersApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.UsersApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.tools&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.taron.suppliers.models" />
+      <recent name="com.taron.authentications.models" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.taron.users.repositories" />
+      <recent name="com.taron.suppliers.repositories" />
+      <recent name="com.taron.stocks.repositories" />
+      <recent name="com.taron.products.repositories" />
+      <recent name="com.taron.orders.repositories" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="MicronautRunConfigurationType" />
+        <option value="QuarkusRunConfigurationType" />
+      </set>
+    </option>
+    <option name="excludedTypes">
+      <set>
+        <option value="HttpClient.HttpRequestRunConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="HTTP Request.authentications | Login an user">
+    <configuration name="authentications | Login an user" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/backend/authentications/src/test/authentications.http" index="2" requestIdentifier="Login an user" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="authentications | Register new user" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/backend/authentications/src/test/authentications.http" requestIdentifier="Register new user" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="enterprises | Create an enterprise" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/backend/enterprises/src/test/enterprises.http" requestIdentifier="Create an enterprise" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="users | Get user by email" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/backend/users/src/test/users.http" index="4" requestIdentifier="Get user by email" runType="Run single request">
+      <method v="2" />
+    </configuration>
+    <configuration name="AuthenticationsApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="authentications" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.taron.authentications.AuthenticationsApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EnterprisesApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="enterprises" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.taron.enterprises.EnterprisesApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EurekaServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="eureka-server" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.taron.eurekaserver.EurekaServerApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OrdersApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="orders" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.taron.orders.OrdersApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProductsApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="products" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.taron.products.ProductsApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StocksApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="stocks" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.taron.stocks.StocksApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SuppliersApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="suppliers" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.taron.suppliers.SuppliersApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UsersApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="users" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.taron.users.UsersApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="HTTP Request.authentications | Login an user" />
+      <item itemvalue="HTTP Request.authentications | Register new user" />
+      <item itemvalue="HTTP Request.enterprises | Create an enterprise" />
+      <item itemvalue="HTTP Request.users | Get user by email" />
+      <item itemvalue="Spring Boot.AuthenticationsApplication" />
+      <item itemvalue="Spring Boot.EnterprisesApplication" />
+      <item itemvalue="Spring Boot.EurekaServerApplication" />
+      <item itemvalue="Spring Boot.OrdersApplication" />
+      <item itemvalue="Spring Boot.ProductsApplication" />
+      <item itemvalue="Spring Boot.StocksApplication" />
+      <item itemvalue="Spring Boot.SuppliersApplication" />
+      <item itemvalue="Spring Boot.UsersApplication" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="HTTP Request.authentications | Login an user" />
+        <item itemvalue="HTTP Request.authentications | Register new user" />
+        <item itemvalue="HTTP Request.enterprises | Create an enterprise" />
+        <item itemvalue="HTTP Request.users | Get user by email" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-21.0.1-openjdk-21.0.1-249ae16d76d6-a618e4d4" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="df140352-59c6-4583-865c-0a4353785940" name="Changes" comment="" />
+      <created>1746715496027</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1746715496027</updated>
+      <workItem from="1746715497559" duration="500000" />
+      <workItem from="1746716007865" duration="14202000" />
+      <workItem from="1746870247185" duration="9076000" />
+      <workItem from="1747060785851" duration="708000" />
+      <workItem from="1747153211456" duration="487000" />
+      <workItem from="1747154951860" duration="1746000" />
+      <workItem from="1747225944384" duration="1020000" />
+      <workItem from="1747226975769" duration="1041000" />
+      <workItem from="1747228175624" duration="13468000" />
+      <workItem from="1747299127018" duration="16837000" />
+      <workItem from="1747395046204" duration="8980000" />
+      <workItem from="1747480037749" duration="11439000" />
+      <workItem from="1747566663875" duration="5543000" />
+      <workItem from="1747743574016" duration="4868000" />
+      <workItem from="1747752702465" duration="3565000" />
+      <workItem from="1747823302263" duration="7765000" />
+      <workItem from="1747910841209" duration="8532000" />
+      <workItem from="1747923649013" duration="4918000" />
+      <workItem from="1747938383847" duration="1917000" />
+      <workItem from="1747997696667" duration="1020000" />
+      <workItem from="1747999362159" duration="2482000" />
+      <workItem from="1748096511623" duration="6581000" />
+      <workItem from="1748358956451" duration="3699000" />
+      <workItem from="1748429969334" duration="622000" />
+      <workItem from="1748519085581" duration="6166000" />
+      <workItem from="1748601278131" duration="3241000" />
+      <workItem from="1749130461117" duration="3739000" />
+      <workItem from="1749556445606" duration="6703000" />
+      <workItem from="1749727437277" duration="1820000" />
+      <workItem from="1749901086887" duration="159000" />
+      <workItem from="1749907660300" duration="641000" />
+      <workItem from="1749988159093" duration="604000" />
+      <workItem from="1750022643005" duration="661000" />
+      <workItem from="1750080721020" duration="885000" />
+      <workItem from="1750169227675" duration="746000" />
+      <workItem from="1750244840663" duration="4000" />
+      <workItem from="1750244998085" duration="776000" />
+      <workItem from="1750249902524" duration="32000" />
+      <workItem from="1750262791429" duration="602000" />
+      <workItem from="1750281573480" duration="5000" />
+      <workItem from="1750768553802" duration="2703000" />
+      <workItem from="1750843214626" duration="37000" />
+      <workItem from="1751975833621" duration="136000" />
+      <workItem from="1754224685908" duration="1523000" />
+      <workItem from="1754302853884" duration="2000" />
+      <workItem from="1757795411531" duration="673000" />
+      <workItem from="1776611596596" duration="1364000" />
+      <workItem from="1776694071554" duration="2376000" />
+      <workItem from="1777033020279" duration="2083000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

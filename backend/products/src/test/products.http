@@ -1,0 +1,26 @@
+### 1. Créer un produit (POST)
+POST http://localhost:8084/products
+Content-Type: application/json
+
+{
+  "name": "Produit A",
+  "type": "Type X"
+}
+
+### 2. Récupérer un produit par son ID (GET)
+GET http://localhost:8084/products/1
+
+### 3. Récupérer tous les produits (GET)
+GET http://localhost:8084/products/getAll
+
+### 4. Mettre à jour un produit (PATCH)
+PATCH http://localhost:8084/products/updateProduct/1
+Content-Type: application/json
+
+{
+  "name": "Produit A Mis à Jour",
+  "type": "Type Y"
+}
+
+### 5. Supprimer un produit (DELETE)
+DELETE http://localhost:8084/products/1
