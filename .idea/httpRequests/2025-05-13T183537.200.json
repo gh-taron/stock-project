@@ -1,0 +1,11 @@
+{
+  "id": 2,
+  "firstname": "Alice",
+  "lastname": "Dupont",
+  "email": "alice.dupont@example.com",
+  "phoneNumber": "0612345678",
+  "password": "user123",
+  "role": "user",
+  "idEnterprise": 1,
+  "photoUrl": null
+}

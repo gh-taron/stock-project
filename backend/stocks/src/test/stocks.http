@@ -1,0 +1,28 @@
+### Créer un stock
+POST http://localhost:8087/stocks
+Content-Type: application/json
+
+{
+  "productId": 1,
+  "enterpriseId": 1,
+  "address": "Entrepôt Bruxelles"
+}
+
+### Récupérer tout
+GET http://localhost:8087/stocks
+
+### Récupérer par entreprise
+GET http://localhost:8087/stocks/enterprise/1
+
+### Modifier un stock
+PATCH http://localhost:8087/stocks/1
+Content-Type: application/json
+
+{
+  "productId": 1,
+  "enterpriseId": 1,
+  "address": "Nouveau dépôt"
+}
+
+### Supprimer un stock
+DELETE http://localhost:8087/stocks/1

@@ -1,0 +1,28 @@
+@baseUrl = http://localhost:8085
+
+### 1. Créer une commande
+POST {{baseUrl}}/orders
+Content-Type: application/json
+
+{
+  "enterpriseId": 1,
+  "supplierId": 1,
+  "state": "En attente"
+}
+
+### 2. Récupérer toutes les commandes pour une entreprise
+GET {{baseUrl}}/orders/getAllByEnterprise/1
+
+### 3. Récupérer une commande par ID
+GET {{baseUrl}}/orders/2
+
+### 4. Modifier l’état d’une commande
+PATCH {{baseUrl}}/orders/2
+Content-Type: application/json
+
+{
+  "state": "Validée"
+}
+
+### 5. Supprimer une commande
+DELETE {{baseUrl}}/orders/1

@@ -1,0 +1,9 @@
+
+<div class="position-absolute top-50 start-50 translate-middle">
+    <h1 class="text-primary">Bienvenue sur le système de gestion de stock</h1>
+    <p class="lead d-flex justify-content-center">Gérez vos produits, commandes et stocks facilement et efficacement.</p>
+    <div class="d-flex gap-4 justify-content-center">
+        <a *ngIf="!authService.isLoggedIn()" class="btn btn-success" href="/login">Se connecter</a>
+        <a *ngIf="!authService.isLoggedIn()" class="btn btn-primary" href="/register">S'inscrire en tant qu'entreprise</a>
+    </div>     
+</div>
