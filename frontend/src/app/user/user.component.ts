@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-user',
@@ -21,10 +23,12 @@ export class UserComponent implements OnInit {
     email: '',
     phoneNumber: '',
     password: '',
-    role: 'user',
+    role: 'employee',
   }
 
-  constructor(private router: Router) {}
+  @ViewChild('deleteDialog') deleteDialog: any;
+
+  constructor(private router: Router, private dialog: MatDialog) {}
 
   ngOnInit(): void {
     const id = localStorage.getItem('idEnterprise') || sessionStorage.getItem('idEnterprise');
@@ -37,6 +41,15 @@ export class UserComponent implements OnInit {
       this.filteredUsers = data; 
     })
       .catch(err => console.error('Erreur de fetch', err));
+  }
+
+  confirmDelete(user: any) {
+    this.dialog.open(this.deleteDialog).afterClosed().subscribe((result) => {
+      if(!result){  
+        return
+      }
+      this.deleteUser(user);
+    });
   }
 
   deleteUser(user : any){
@@ -86,13 +99,12 @@ export class UserComponent implements OnInit {
     const created = await res.json();
     this.users.push(created);
     this.filteredUsers = [...this.users];
-    this.newUser = { firstname: '', lastname: '', email: '', phoneNumber: '', password: '', role: 'user' };
+    this.newUser = { firstname: '', lastname: '', email: '', phoneNumber: '', password: '', role: 'employee' };
     this.isAdding = false;
   } catch (error: any) {
     alert("Erreur d'ajout : " + error.message);
   }
 }
-
 
   cancelEdit() {
     this.editingUserId = null;

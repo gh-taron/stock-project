@@ -4,8 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="df140352-59c6-4583-865c-0a4353785940" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="df140352-59c6-4583-865c-0a4353785940" name="Changes" comment="added confirmation pop-up before deleting user">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/angular.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/user/user.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/user/user.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/user/user.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/user/user.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/styles.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,6 +88,7 @@
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
     &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.tools&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\taron\\Desktop\\projet_perso\\frontend\\node_modules\\typescript\\lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -112,7 +121,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="HTTP Request.authentications | Login an user">
+  <component name="RunManager" selected="Spring Boot.UsersApplication">
     <configuration name="authentications | Login an user" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/backend/authentications/src/test/authentications.http" index="2" requestIdentifier="Login an user" runType="Run single request">
       <method v="2" />
     </configuration>
@@ -167,13 +176,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SuppliersApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <module name="suppliers" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.taron.suppliers.SuppliersApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="UsersApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="users" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.taron.users.UsersApplication" />
@@ -192,7 +194,6 @@
       <item itemvalue="Spring Boot.OrdersApplication" />
       <item itemvalue="Spring Boot.ProductsApplication" />
       <item itemvalue="Spring Boot.StocksApplication" />
-      <item itemvalue="Spring Boot.SuppliersApplication" />
       <item itemvalue="Spring Boot.UsersApplication" />
     </list>
     <recent_temporary>
@@ -268,6 +269,7 @@
       <workItem from="1776611596596" duration="1364000" />
       <workItem from="1776694071554" duration="2376000" />
       <workItem from="1777033020279" duration="2083000" />
+      <workItem from="1777288403582" duration="418000" />
     </task>
     <servers />
   </component>
@@ -284,5 +286,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="added confirmation pop-up before deleting user" />
+    <option name="LAST_COMMIT_MESSAGE" value="added confirmation pop-up before deleting user" />
   </component>
 </project>

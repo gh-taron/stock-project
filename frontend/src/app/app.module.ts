@@ -15,7 +15,7 @@ import { SupplierComponent } from './supplier/supplier.component';
 import { SupplierFavoriteComponent } from './supplier-favorite/supplier-favorite.component';
 import { StockComponent } from './stock/stock.component';
 import { ProductsSupplierComponent } from './products-supplier/products-supplier.component';
-
+import { MatDialogModule } from '@angular/material/dialog';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,6 +34,8 @@ import { ProductsSupplierComponent } from './products-supplier/products-supplier
     BrowserModule,
     RouterModule.forRoot(routes),
     FormsModule,
+    MatDialogModule
+
   ],
   bootstrap: [AppComponent]
 })
