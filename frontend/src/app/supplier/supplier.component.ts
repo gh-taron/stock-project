@@ -83,7 +83,7 @@ export class SupplierComponent implements OnInit {
     this.router.navigate(["/favorite-suppliers"]);
   }
 
-  voirProduits(idFournisseur: number) {
-    this.router.navigate(['/produits-fournisseur', idFournisseur]);
+  checkProducts(idSupplier: number) {
+    this.router.navigate(['/produits-fournisseur', idSupplier]);
   }
 }

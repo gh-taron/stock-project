@@ -25,7 +25,6 @@ Each microservice has its own business logic, REST controller, and shares the Po
 **Frontend**
 - Angular 17 (module-based)
 - Bootstrap 5 + Bootstrap Icons
-- FormsModule (ngModel)
 
 **Backend**
 - Java 17
@@ -36,3 +35,6 @@ Each microservice has its own business logic, REST controller, and shares the Po
 - JWT (auth0/java-jwt) + BCrypt
 - Lombok
 - Maven
+
+**Database**
+- PostgreSQL

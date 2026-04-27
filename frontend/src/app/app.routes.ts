@@ -15,5 +15,5 @@ export const routes: Routes = [
     { path: "supplier", component : SupplierComponent},
     { path: "favorite-suppliers", component : SupplierFavoriteComponent},
     { path: "stock", component : StockComponent},
-    { path: 'produits-fournisseur/:id', component: ProductsSupplierComponent },
+    { path: 'products-supplier/:id', component: ProductsSupplierComponent },
 ]
