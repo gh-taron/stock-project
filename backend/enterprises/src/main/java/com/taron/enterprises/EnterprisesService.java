@@ -2,7 +2,6 @@ package com.taron.enterprises;
 
 import com.taron.enterprises.models.Enterprise;
 import com.taron.enterprises.repositories.EnterprisesRepository;
-import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -38,4 +37,11 @@ public class EnterprisesService {
         return this.repository.findAll();
     }
 
+    public List<Enterprise> getAllSuppliers() {
+        return this.repository.findByType("supplier");
+    }
+
+    public List<Enterprise> getAllBuyers() {
+        return this.repository.findByType("buyer");
+    }
 }

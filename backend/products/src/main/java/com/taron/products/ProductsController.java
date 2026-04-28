@@ -1,14 +1,10 @@
 package com.taron.products;
 
 import com.taron.products.models.Product;
-import com.taron.products.repositories.ProductsRepository;
-import com.taron.stocks.models.Stock;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Map;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/products")
@@ -16,11 +12,9 @@ public class ProductsController {
 
     private final ProductsService service;
 
-
     public ProductsController(ProductsService service) {
         this.service = service;
     }
-
 
     @GetMapping("/getAll")
     public List<Product> getAll(){
@@ -32,9 +26,9 @@ public class ProductsController {
         return this.service.getById(id);
     }
 
-    @GetMapping("/getAllBySupplier/{id}")
-    public List<Product> getAllBySupplier(@PathVariable int id){
-        return this.service.getAllBySupplier(id);
+    @GetMapping("/getAllByEnterprise/{id}")
+    public List<Product> getAllByEnterprise(@PathVariable int id){
+        return this.service.getAllByEnterprise(id);
     }
 
     @PatchMapping("/updateProduct/{id}")
@@ -50,7 +44,7 @@ public class ProductsController {
     public ResponseEntity<?> createOne(@RequestBody Product product) {
         if (product.getName() == null || product.getName().isBlank() ||
                 product.getType() == null || product.getType().isBlank() ||
-                product.getDescription() == null || product.getIdSupplier() == null) {
+                product.getIdEnterprise() == null) {
             return ResponseEntity.badRequest().body("Tous les champs requis doivent être présents.");
         }
 
@@ -66,7 +60,7 @@ public class ProductsController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<?> deleteOne (@PathVariable Integer id) {
+    public ResponseEntity<?> deleteOne(@PathVariable Integer id) {
         this.service.deleteOne(id);
         return ResponseEntity.ok("Produit et stock supprimés.");
     }

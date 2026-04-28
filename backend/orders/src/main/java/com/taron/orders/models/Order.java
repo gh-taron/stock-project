@@ -18,11 +18,11 @@ public class Order {
     @Column(name = "id_order")
     private int id;
 
-    @Column(name = "id_enterprise", nullable = false)
-    private Integer enterpriseId;
+    @Column(name = "id_buyer", nullable = false)
+    private Integer idBuyer;
 
     @Column(name = "id_supplier", nullable = false)
-    private Integer supplierId;
+    private Integer idSupplier;
 
     @Column(name = "created_at", nullable = false)
     private LocalDateTime createdAt;

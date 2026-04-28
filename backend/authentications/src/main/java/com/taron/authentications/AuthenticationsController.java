@@ -6,13 +6,15 @@ import com.taron.authentications.models.User;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.awt.*;
 import java.util.Collections;
+import java.util.Set;
 
 
 @RestController
 @RequestMapping("/auth")
 public class AuthenticationsController {
+
+    private static final Set<String> ALLOWED_ROLES = Set.of("admin", "employee");
 
     private final AuthenticationsService service;
 
@@ -28,17 +30,20 @@ public class AuthenticationsController {
                 isNullOrEmpty(user.getEmail()) ||
                 isNullOrEmpty(user.getPassword()) ||
                 isNullOrEmpty(user.getPhoneNumber()) ||
-                isNullOrEmpty(user.getRole())) {
+                isNullOrEmpty(user.getRole()) ||
+                user.getIdEnterprise() == null) {
 
             return ResponseEntity.badRequest().body("Tous les champs obligatoires doivent être renseignés.");
         }
 
-        boolean usedEmail = this.service.existsByEmail(user.getEmail());
-        if(usedEmail)
+        if (!ALLOWED_ROLES.contains(user.getRole())) {
+            return ResponseEntity.badRequest().body("Rôle invalide (admin ou employee).");
+        }
+
+        if (this.service.existsByEmail(user.getEmail()))
             return ResponseEntity.badRequest().body("Cet email a déjà été utilisé");
 
-        boolean usedPhone = this.service.existsByPhoneNumber(user.getPhoneNumber());
-        if(usedPhone)
+        if (this.service.existsByPhoneNumber(user.getPhoneNumber()))
             return ResponseEntity.badRequest().body("Ce numéro de téléphone a déjà été utilisé");
 
         User createdUser = service.register(user);
@@ -55,6 +60,4 @@ public class AuthenticationsController {
         String token = service.loginAndReturnToken(login.getEmail(), login.getPassword());
         return ResponseEntity.ok(Collections.singletonMap("token", token));
     }
-
-
 }

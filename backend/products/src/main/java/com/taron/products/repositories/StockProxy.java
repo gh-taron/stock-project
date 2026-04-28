@@ -7,6 +7,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 @FeignClient(name = "stocks", path = "/stocks")
 public interface StockProxy {
 
-    @DeleteMapping("/deleteBySupplierAndProduct/{idSupplier}/{idProduct}")
-    void deleteBySupplierAndProduct(@PathVariable int idSupplier, @PathVariable int idProduct);
+    @DeleteMapping("/{id}")
+    void deleteOne(@PathVariable Integer id);
 }

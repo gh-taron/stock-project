@@ -15,13 +15,10 @@ export class LoginComponent {
   rememberMe: boolean = false;
   showPassword = false;
 
-
-
-  constructor(private router: Router, public authService : AuthService) {}
+  constructor(private router: Router, public authService: AuthService) {}
 
   async onSubmit() {
     if (this.email.trim() === '' || this.password.trim() === '') {
-      console.error('L\'email et le mot de passe sont requis.');
       alert('L\'email et le mot de passe sont requis.');
       return;
     }
@@ -29,12 +26,13 @@ export class LoginComponent {
     try {
       const token = await this.loginUser(this.email, this.password);
       const user = await this.getUserByEmail(this.email);
-    
-      console.log('Connexion réussie, token:', token);
-      if(this.rememberMe)
-        this.authService.loginLocal(token, user);
+      const enterprise = await this.getEnterpriseById(user.idEnterprise);
+
+      if (this.rememberMe)
+        this.authService.loginLocal(token, user, enterprise.type);
       else
-        this.authService.loginSession(token, user);
+        this.authService.loginSession(token, user, enterprise.type);
+
       this.router.navigate(["/"]);
     } catch (error) {
       console.error('Erreur de connexion:', error);
@@ -42,52 +40,28 @@ export class LoginComponent {
     }
   }
 
-  async getUserByEmail(email : string){
-    try {
-      const response = await fetch(`http://localhost:8082/users/findByEmail/${email}`,{
-        method : 'GET',
-        headers: {
-          'Content-Type': 'application/json'
-        }
-      })
-
-      if (!response.ok) {
-        const errorMessage = await response.text();
-        throw new Error(errorMessage);
-      }
-
-      const user = await response.json();
-      return user;
-    } catch(error : any){
-      console.error('Erreur lors de la récupération du user:', error.message);
-      throw new Error(error.message);
-    }
-    
+  async getUserByEmail(email: string) {
+    const response = await fetch(`http://localhost:8082/users/findByEmail/${email}`);
+    if (!response.ok) throw new Error(await response.text());
+    return response.json();
   }
 
+  async getEnterpriseById(id: number) {
+    const response = await fetch(`http://localhost:8083/enterprises/${id}`);
+    if (!response.ok) throw new Error(await response.text());
+    return response.json();
+  }
 
-
-  
   async loginUser(email: string, password: string) {
-    try {
-      const response = await fetch('http://localhost:8081/auth/login', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ email, password })
-      });
+    const response = await fetch('http://localhost:8081/auth/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, password })
+    });
 
-      if (!response.ok) {
-        const errorMessage = await response.text();
-        throw new Error(errorMessage);
-      }
+    if (!response.ok) throw new Error(await response.text());
 
-      const data = await response.json();
-      return data.token;
-    } catch (error: any) {
-      console.error('Erreur lors de la connexion:', error.message);
-      throw new Error(error.message);
-    }
+    const data = await response.json();
+    return data.token;
   }
 }

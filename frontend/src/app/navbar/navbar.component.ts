@@ -10,12 +10,16 @@ import { Router } from '@angular/router';
 })
 export class NavbarComponent implements OnInit {
   role: string | null = null;
+  enterpriseType: string | null = null;
 
   constructor(public authService: AuthService, private router: Router) {}
 
   ngOnInit(): void {
     this.authService.role$.subscribe(role => {
       this.role = role;
+    });
+    this.authService.enterpriseType$.subscribe(type => {
+      this.enterpriseType = type;
     });
   }
 

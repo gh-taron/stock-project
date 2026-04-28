@@ -1,12 +1,10 @@
 package com.taron.orders;
 
 import com.taron.orders.models.Order;
-import jakarta.ws.rs.Path;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/orders")
@@ -18,16 +16,21 @@ public class OrdersController {
         this.service = service;
     }
 
+    @GetMapping("/getAllByBuyer/{id}")
+    public List<Order> getAllByBuyer(@PathVariable int id){
+        return this.service.getAllByBuyer(id);
+    }
 
-    @GetMapping("/getAllByEnterprise/{id}")
-    public List<Order> getAllByEnterprise(@PathVariable int id){
-        return this.service.getAllByEnterprise(id);
+    @GetMapping("/getAllBySupplier/{id}")
+    public List<Order> getAllBySupplier(@PathVariable int id){
+        return this.service.getAllBySupplier(id);
     }
 
     @PostMapping
     public ResponseEntity<?> createOne(@RequestBody Order order){
-        if(order.getEnterpriseId() == null || order.getSupplierId() == null || order.getState().isBlank() || order.getState() == null ){
-            return ResponseEntity.badRequest().body("Tous les champs doivent être remplis correctement (longueurs respectées et non vides).");
+        if(order.getIdBuyer() == null || order.getIdSupplier() == null
+                || order.getState() == null || order.getState().isBlank()){
+            return ResponseEntity.badRequest().body("Tous les champs doivent être remplis correctement.");
         }
         Order newOrder = this.service.createOne(order);
         return ResponseEntity.ok(newOrder);
@@ -39,10 +42,10 @@ public class OrdersController {
     }
 
     @PatchMapping("/{id}")
-    public Order updateOne(@PathVariable int id,@RequestBody Order newOrder){
+    public Order updateOne(@PathVariable int id, @RequestBody Order newOrder){
         Order order = getOne(id);
         order.setState(newOrder.getState());
-        return this.service.createOne(order);
+        return this.service.updateState(order);
     }
 
     @DeleteMapping("/{id}")
@@ -54,20 +57,4 @@ public class OrdersController {
     public boolean existsBySupplierId(@RequestParam int supplierId) {
         return service.existsBySupplierId(supplierId);
     }
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
