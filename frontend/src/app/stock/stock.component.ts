@@ -23,30 +23,30 @@ export class StockComponent {
   editingProductId: number | null = null;
   editProductData: any = { name: '', type: '', description: '', quantity: 0 };
 
-  idSupplier: number = 0;
+  idEnterprise: number = 0;
 
   ngOnInit(): void {
-    this.idSupplier = this.getSupplierId();
-    if (!this.idSupplier) return;
+    this.idEnterprise = this.getEnterpriseId();
+    if (!this.idEnterprise) return;
     this.fetchProductsAndStocks();
   }
 
-  getSupplierId(): number {
-    const id = localStorage.getItem('idUser') || sessionStorage.getItem('idUser');
+  getEnterpriseId(): number {
+    const id = localStorage.getItem('idEnterprise') || sessionStorage.getItem('idEnterprise');
     return id ? parseInt(id, 10) : 0;
   }
 
   fetchProductsAndStocks(): void {
     Promise.all([
-      fetch(`http://localhost:8084/products/getAllBySupplier/${this.idSupplier}`).then(res => res.json()),
-      fetch(`http://localhost:8087/stocks/getStocksBySupplier/${this.idSupplier}`).then(res => res.json())
+      fetch(`http://localhost:8084/products/getAllByEnterprise/${this.idEnterprise}`).then(res => res.json()),
+      fetch(`http://localhost:8087/stocks/getStocksByEnterprise/${this.idEnterprise}`).then(res => res.json())
     ])
-    .then(([products, stocks]) => {
-      this.products = products;
-      this.stocks = stocks;
-      this.mergeProductQuantities();
-    })
-    .catch(err => console.error("Erreur lors de la récupération des données :", err));
+      .then(([products, stocks]) => {
+        this.products = products;
+        this.stocks = stocks;
+        this.mergeProductQuantities();
+      })
+      .catch(err => console.error("Erreur lors de la récupération des données :", err));
   }
 
   mergeProductQuantities(): void {
@@ -71,10 +71,10 @@ export class StockComponent {
       name: this.newProduct.name.trim(),
       type: this.newProduct.type.trim(),
       description: this.newProduct.description?.trim() || null,
-      idSupplier: this.idSupplier
+      idEnterprise: this.idEnterprise
     };
 
-    if (!body.name || !body.type || !this.idSupplier || this.quantity == null) {
+    if (!body.name || !body.type || !this.idEnterprise || this.quantity == null) {
       alert("Tous les champs sont requis.");
       return;
     }
@@ -82,7 +82,7 @@ export class StockComponent {
     fetch('http://localhost:8084/products', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ ...body })
+      body: JSON.stringify(body)
     })
       .then(res => {
         if (!res.ok) throw new Error("Erreur lors de l'ajout du produit");
@@ -91,8 +91,7 @@ export class StockComponent {
       .then((addedProduct) => {
         const stock = {
           idProduct: addedProduct.id,
-          ownerType: "supplier",
-          idOwner: this.idSupplier,
+          idEnterprise: this.idEnterprise,
           quantity: this.quantity
         };
 
@@ -127,9 +126,7 @@ export class StockComponent {
         method: 'PATCH',
       });
 
-      if (!response.ok) {
-        throw new Error("Erreur lors de la suppression du produit");
-      }
+      if (!response.ok) throw new Error("Erreur lors de la suppression du produit");
 
       this.products = this.products.filter(p => p.id !== product.id);
       this.filteredStocks = this.filteredStocks.filter(p => p.id !== product.id);
@@ -143,7 +140,6 @@ export class StockComponent {
   startEdit(product: any): void {
     this.editingProductId = product.id;
     this.editProductData = { ...product };
-    console.log(this.editProductData);
   }
 
   cancelEdit(): void {
@@ -152,49 +148,43 @@ export class StockComponent {
   }
 
   saveEdit(): void {
-  fetch(`http://localhost:8084/products/updateProduct/${this.editProductData.id}`, {
-    method: 'PATCH',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(this.editProductData)
-  })
-    .then(res => {
-      if (!res.ok) throw new Error("Erreur lors de la modification du produit");
-      return res.json();
+    fetch(`http://localhost:8084/products/updateProduct/${this.editProductData.id}`, {
+      method: 'PATCH',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(this.editProductData)
     })
-    .then((updatedProduct) => {
-      const index = this.products.findIndex(p => p.id === updatedProduct.id);
-      if (index !== -1) {
-        this.products[index] = {
-          ...updatedProduct,
-          quantity: this.editProductData.quantity
-        };
-      }
-
-      const stock = this.stocks.find(s => s.idProduct === updatedProduct.id);
-      if (!stock) {
-        throw new Error("Stock introuvable pour ce produit.");
-      }
-
-      return fetch(`http://localhost:8087/stocks/updateStock/${stock.id}`, {
-        method: 'PATCH',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ quantity: this.editProductData.quantity })
-      })
       .then(res => {
-        if (!res.ok) throw new Error("Erreur lors de la mise à jour du stock");
+        if (!res.ok) throw new Error("Erreur lors de la modification du produit");
         return res.json();
       })
-      .then(updatedStock => {
-        stock.quantity = updatedStock.quantity;
-        this.products[index].quantity = updatedStock.quantity;
+      .then((updatedProduct) => {
+        const index = this.products.findIndex(p => p.id === updatedProduct.id);
+        if (index !== -1) {
+          this.products[index] = {
+            ...updatedProduct,
+            quantity: this.editProductData.quantity
+          };
+        }
 
-        this.filteredStocks = this.products.filter(p => p.active);
+        const stock = this.stocks.find(s => s.idProduct === updatedProduct.id);
+        if (!stock) throw new Error("Stock introuvable pour ce produit.");
 
-        this.cancelEdit();
-      });
-    })
-    .catch(err => alert(err.message));
+        return fetch(`http://localhost:8087/stocks/updateStock/${stock.id}`, {
+          method: 'PATCH',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ quantity: this.editProductData.quantity })
+        })
+          .then(res => {
+            if (!res.ok) throw new Error("Erreur lors de la mise à jour du stock");
+            return res.json();
+          })
+          .then(updatedStock => {
+            stock.quantity = updatedStock.quantity;
+            this.products[index].quantity = updatedStock.quantity;
+            this.filteredStocks = this.products.filter(p => p.active);
+            this.cancelEdit();
+          });
+      })
+      .catch(err => alert(err.message));
   }
-
-
 }

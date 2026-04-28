@@ -20,11 +20,8 @@ public class Stock {
     @Column(name = "id_product", nullable = false)
     private Integer idProduct;
 
-    @Column(name = "owner_type", nullable = false)
-    private String ownerType; // "supplier" ou "enterprise"
-
-    @Column(name = "id_owner", nullable = false)
-    private Integer idOwner;
+    @Column(name = "id_enterprise", nullable = false)
+    private Integer idEnterprise;
 
     @Column(name = "quantity", nullable = false)
     private Integer quantity;

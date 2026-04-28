@@ -35,7 +35,7 @@ public class User {
     @Column(name = "role", nullable = false, length = 50)
     private String role;
 
-    @Column(name = "id_enterprise", nullable = true)
+    @Column(name = "id_enterprise", nullable = false)
     private Integer idEnterprise;
 
     @Column(name = "photo_url", nullable = true)

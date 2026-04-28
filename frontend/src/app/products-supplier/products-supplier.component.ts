@@ -8,66 +8,61 @@ import { ActivatedRoute } from '@angular/router';
   standalone: false
 })
 export class ProductsSupplierComponent implements OnInit {
-  idFournisseur: number = 0;
-  produits: any[] = [];
+  idSupplier: number = 0;
+  products: any[] = [];
 
   constructor(private route: ActivatedRoute) {}
 
-  ngOnInit(): void {
-    this.idFournisseur = Number(this.route.snapshot.paramMap.get('id'));
-    this.fetchProduits();
+  ngOnInit(): void {  
+    this.idSupplier = Number(this.route.snapshot.paramMap.get('id'));
+    this.fetchProducts();
   }
 
-  fetchProduits(): void {
-    fetch(`http://localhost:8084/products/getAllBySupplier/${this.idFournisseur}`)
-      .then(res => res.json())
-      .then((data) => {
-        const produitsAvecQuantite = data.map(async (p: any) => {
-          const quantity = await this.getQuantiteDisponible(p.id);
-          return { ...p, quantity, quantiteCommande: 1 };
-        });
-
-        Promise.all(produitsAvecQuantite).then(result => {
-          this.produits = result;
-          console.log(this.produits);
-        });
-      })
-      .catch(err => console.error(err));
-  }
-
-  getQuantiteDisponible(idProduct: number): Promise<{ id: number, quantity: number }> {
-    return fetch(`http://localhost:8087/stocks/getStockBySupplierAndProduct/${this.idFournisseur}/${idProduct}`)
-    .then(res => res.ok ? res.json() : null)
-    .then(stock => ({
-      id: typeof stock?.id === 'number' ? stock.id : 0,
-      quantity: typeof stock?.quantity === 'number' ? stock.quantity : 0
-    }))
-    .catch(() => ({ id: 0, quantity: 0 }));
+  fetchProducts(): void {
+  fetch(`http://localhost:8084/products/getAllByEnterprise/${this.idSupplier}`)
+    .then(res => res.json())
+    .then(async (data) => {
+      const productsWithQuantity = await Promise.all(
+        data.map(async (p: any) => {
+          const stock = await this.getQuantiteDisponible(p.id);
+          return { ...p, quantity: stock.quantity, orderQuantity: 1 };
+        })
+      );
+      this.products = productsWithQuantity;
+      console.log(this.products);
+    })
+    .catch(err => console.error(err));
 }
 
+  getQuantiteDisponible(idProduct: number): Promise<{ quantity: number }> {
+    return fetch(`http://localhost:8087/stocks/getStockByEnterpriseAndProduct/${this.idSupplier}/${idProduct}`)
+      .then(res => res.ok ? res.json() : null)
+      .then(stock => ({
+        quantity: typeof stock?.quantity === 'number' ? stock.quantity : 0
+      }))
+      .catch(() => ({ quantity: 0 }));
+  }
 
-  commanderProduit(produit: any): void {
-    const idEnterprise = Number(localStorage.getItem('idEnterprise') || sessionStorage.getItem('idEnterprise'));
 
-    if (!produit.quantiteCommande || produit.quantiteCommande <= 0) {
+  orderProduct(product: any): void {
+    const idBuyer = Number(localStorage.getItem('idEnterprise') || sessionStorage.getItem('idEnterprise'));
+
+    if (!product.orderQuantity || product.orderQuantity <= 0) {
       alert("Veuillez entrer une quantité valide.");
       return;
     }
 
-    if (produit.quantiteCommande > produit.quantity) {
-      alert(`Stock insuffisant. Disponible : ${produit.quantity}`);
+    if (product.orderQuantity > product.quantity) {
+      alert(`Stock insuffisant. Disponible : ${product.quantity}`);
       return;
     }
 
     const order = {
-      idEnterprise: idEnterprise,
-      idSupplier: this.idFournisseur,
+      idBuyer: idBuyer,
+      idSupplier: this.idSupplier,
       state: "pending",
       products: [
-        {
-          idProduct: produit.id,
-          quantity: produit.quantiteCommande
-        }
+        { idProduct: product.id, quantity: product.orderQuantity }
       ]
     };
 
@@ -76,17 +71,17 @@ export class ProductsSupplierComponent implements OnInit {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(order)
     })
-    .then(res => {
-      if (!res.ok) throw new Error("Erreur lors de la commande");
-      return res.json();
-    })
-    .then(() => {
-      alert("Commande envoyée !");
-      produit.quantiteCommande = 1;
-    })
-    .catch(err => {
-      console.error(err);
-      alert("Une erreur est survenue.");
-    });
+      .then(res => {
+        if (!res.ok) throw new Error("Erreur lors de la commande");
+        return res.json();
+      })
+      .then(() => {
+        alert("Commande envoyée !");
+        product.orderQuantity = 1;
+      })
+      .catch(err => {
+        console.error(err);
+        alert("Une erreur est survenue.");
+      });
   }
 }

@@ -16,7 +16,7 @@
           <li class="nav-item" *ngIf="authService.isLoggedIn()">
             <a class="nav-link active fs-5 text" routerLink="/stock">Stocks</a>
           </li>
-          <li class="nav-item" *ngIf="authService.isLoggedIn() && role === 'admin'">
+          <li class="nav-item" *ngIf="authService.isLoggedIn() && enterpriseType === 'buyer'">
             <a class="nav-link active fs-5 text" routerLink="/supplier">Fournisseurs</a>
           </li>
           <li class="nav-item" *ngIf="authService.isLoggedIn() && role === 'admin'">
@@ -24,9 +24,8 @@
           </li>
         </ul>
       </div>
-      <div *ngIf="authService.isLoggedIn()" class="position-absolute top-50 end-0 translate-middle-y"  style="margin-right: 10px;" (click)="logout()">
+      <div *ngIf="authService.isLoggedIn()" class="position-absolute top-50 end-0 translate-middle-y" style="margin-right: 10px;" (click)="logout()">
         <button type="button" class="btn btn-light">Se déconnecter</button>
       </div>
     </div>
   </nav>
-  

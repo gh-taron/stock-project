@@ -20,7 +20,7 @@ export class SupplierComponent implements OnInit {
     this.idEnterprise = this.getEnterpriseId();
     if (!this.idEnterprise) return;
 
-    fetch(`http://localhost:8082/users/getAllSuppliers`)
+    fetch(`http://localhost:8083/enterprises/getAllSuppliers`)
       .then(res => res.json())
       .then(data => {
         this.suppliers = data;
@@ -28,10 +28,10 @@ export class SupplierComponent implements OnInit {
       })
       .catch(err => console.error('Erreur de récupération des fournisseurs', err));
 
-    fetch(`http://localhost:8082/users/favoriteSuppliers/${this.idEnterprise}`)
+    fetch(`http://localhost:8082/users/favoriteSupplierIds/${this.idEnterprise}`)
       .then(res => res.json())
       .then(data => {
-        this.favoriteSupplierIds = data.map((supplier: any) => supplier.id);
+        this.favoriteSupplierIds = data;
       })
       .catch(err => console.error('Erreur de récupération des favoris', err));
   }
@@ -84,6 +84,6 @@ export class SupplierComponent implements OnInit {
   }
 
   checkProducts(idSupplier: number) {
-    this.router.navigate(['/produits-fournisseur', idSupplier]);
+    this.router.navigate(['/products-supplier', idSupplier]);
   }
 }

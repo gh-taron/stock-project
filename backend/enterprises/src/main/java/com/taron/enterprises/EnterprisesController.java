@@ -2,16 +2,17 @@ package com.taron.enterprises;
 
 
 import com.taron.enterprises.models.Enterprise;
-import jakarta.inject.Inject;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Set;
 
 @RestController
 @RequestMapping("/enterprises")
 public class EnterprisesController {
 
+    private static final Set<String> ALLOWED_TYPES = Set.of("buyer", "supplier");
 
     private final EnterprisesService service;
 
@@ -25,9 +26,14 @@ public class EnterprisesController {
                 isNullOrEmpty(enterprise.getName()) ||
                 isNullOrEmpty(enterprise.getEmail()) ||
                 isNullOrEmpty(enterprise.getPhoneNumber()) ||
-                isNullOrEmpty(enterprise.getAddress())) {
+                isNullOrEmpty(enterprise.getAddress()) ||
+                isNullOrEmpty(enterprise.getType())) {
 
             return ResponseEntity.badRequest().body("Tous les champs doivent être renseignés.");
+        }
+
+        if (!ALLOWED_TYPES.contains(enterprise.getType())) {
+            return ResponseEntity.badRequest().body("Type invalide (buyer ou supplier).");
         }
 
         if (service.existsByEmail(enterprise.getEmail())) {
@@ -53,16 +59,28 @@ public class EnterprisesController {
         return this.service.getAll();
     }
 
+    @GetMapping("/getAllSuppliers")
+    public List<Enterprise> getAllSuppliers() {
+        return this.service.getAllSuppliers();
+    }
+
+    @GetMapping("/getAllBuyers")
+    public List<Enterprise> getAllBuyers() {
+        return this.service.getAllBuyers();
+    }
+
     @PatchMapping("/updateEnterprise/{id}")
     public ResponseEntity<?> updateEnterprise(@PathVariable int id, @RequestBody Enterprise newEnterprise) {
-        if (service.existsByEmail(newEnterprise.getEmail())) {
+        Enterprise enterprise = getById(id);
+
+        if (!enterprise.getEmail().equals(newEnterprise.getEmail()) && service.existsByEmail(newEnterprise.getEmail())) {
             return ResponseEntity.badRequest().body("Cet email est déjà utilisé.");
         }
 
-        if (service.existsByPhoneNumber(newEnterprise.getPhoneNumber())) {
+        if (!enterprise.getPhoneNumber().equals(newEnterprise.getPhoneNumber()) && service.existsByPhoneNumber(newEnterprise.getPhoneNumber())) {
             return ResponseEntity.badRequest().body("Ce numéro de téléphone est déjà utilisé.");
         }
-        Enterprise enterprise = getById(id);
+
         enterprise.setAddress(newEnterprise.getAddress());
         enterprise.setName(newEnterprise.getName());
         enterprise.setEmail(newEnterprise.getEmail());
@@ -71,7 +89,6 @@ public class EnterprisesController {
         Enterprise patched = this.service.createOne(enterprise);
 
         return ResponseEntity.ok(patched);
-
     }
 
     private boolean isNullOrEmpty(String value) {

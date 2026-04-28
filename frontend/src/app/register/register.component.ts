@@ -5,14 +5,15 @@ import { Router } from '@angular/router';
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrl: './register.component.css',
-  standalone : false
+  standalone: false
 })
 export class RegisterComponent {
   enterprise = {
     name: '',
     email: '',
     phoneNumber: '',
-    address: ''
+    address: '',
+    type: ''
   };
 
   user = {
@@ -21,7 +22,7 @@ export class RegisterComponent {
     email: '',
     phoneNumber: '',
     password: '',
-    role: ''
+    role: 'admin'
   };
 
   confirmPassword: string = '';
@@ -34,39 +35,33 @@ export class RegisterComponent {
       return;
     }
 
+    if (!this.enterprise.type) {
+      alert("Choisis le type d'entreprise (acheteur ou fournisseur).");
+      return;
+    }
+
     try {
-      if (this.user.role === 'admin') {
-        const resEnterprise = await fetch('http://localhost:8083/enterprises', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(this.enterprise)
-        });
+      const resEnterprise = await fetch('http://localhost:8083/enterprises', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(this.enterprise)
+      });
 
-        if (!resEnterprise.ok) throw new Error(await resEnterprise.text());
+      if (!resEnterprise.ok) throw new Error(await resEnterprise.text());
 
-        const createdEnterprise = await resEnterprise.json();
-        const userWithEnterprise = {
-          ...this.user,
-          idEnterprise: createdEnterprise.id
-        };
+      const createdEnterprise = await resEnterprise.json();
+      const userWithEnterprise = {
+        ...this.user,
+        idEnterprise: createdEnterprise.id
+      };
 
-        const resUser = await fetch('http://localhost:8081/auth/register', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(userWithEnterprise)
-        });
+      const resUser = await fetch('http://localhost:8081/auth/register', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(userWithEnterprise)
+      });
 
-        if (!resUser.ok) throw new Error(await resUser.text());
-
-      } else if (this.user.role === 'supplier') {
-        const resSupplier = await fetch('http://localhost:8081/auth/register', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ ...this.user, idEnterprise: null })
-        });
-
-        if (!resSupplier.ok) throw new Error(await resSupplier.text());
-      }
+      if (!resUser.ok) throw new Error(await resUser.text());
 
       this.router.navigate(['/login']);
 

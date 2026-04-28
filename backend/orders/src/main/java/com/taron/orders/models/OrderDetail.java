@@ -14,12 +14,13 @@ import lombok.*;
 @IdClass(OrderDetailKey.class)
 public class OrderDetail {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id_order")
     private Integer idOrder;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id_product")
     private Integer idProduct;
+
+    @Column(name = "quantity", nullable = false)
+    private Integer quantity;
 }

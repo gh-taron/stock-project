@@ -26,8 +26,8 @@ public class Product {
     @Column(name = "description")
     private String description;
 
-    @Column(name = "id_supplier", nullable = false)
-    private Integer idSupplier;
+    @Column(name = "id_enterprise", nullable = false)
+    private Integer idEnterprise;
 
     @Column(name = "active", nullable = false)
     private Boolean active = true;

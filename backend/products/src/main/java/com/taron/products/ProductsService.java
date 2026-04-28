@@ -35,12 +35,12 @@ public class ProductsService {
 
     @Transactional
     public Product updateProductActive(int idStock, Product product){
-        this.stockProxy.deleteBySupplierAndProduct(product.getIdSupplier(), product.getId());
+        this.stockProxy.deleteOne(idStock);
         return this.repository.save(product);
     }
 
-    public List<Product> getAllBySupplier(int id){
-        return this.repository.findAllProductsByIdSupplier(id);
+    public List<Product> getAllByEnterprise(int idEnterprise){
+        return this.repository.findAllProductsByIdEnterprise(idEnterprise);
     }
 
     public Product createOne(Product product) {

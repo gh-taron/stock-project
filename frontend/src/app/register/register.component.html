@@ -3,39 +3,37 @@
     <h2 class="text-center text-primary mb-4">Créer un compte</h2>
 
     <form (ngSubmit)="onSubmit()">
-      <h5 class="text-secondary">Type de compte</h5>
+      <h5 class="text-secondary">Type d'entreprise</h5>
       <div class="mb-3">
-        <label>Rôle</label>
-        <select class="form-control" [(ngModel)]="user.role" name="role" required>
+        <label>Type</label>
+        <select class="form-control" [(ngModel)]="enterprise.type" name="type" required>
           <option value="">-- Sélectionner --</option>
-          <option value="admin">Administrateur d'entreprise</option>
+          <option value="buyer">Acheteur</option>
           <option value="supplier">Fournisseur</option>
         </select>
       </div>
 
-      <div *ngIf="user.role === 'admin'">
-        <hr>
-        <h5 class="text-secondary">Informations sur l'entreprise</h5>
-        <div class="mb-3">
-          <label>Nom</label>
-          <input type="text" class="form-control" [(ngModel)]="enterprise.name" name="enterpriseName" required>
-        </div>
-        <div class="mb-3">
-          <label>Email</label>
-          <input type="email" class="form-control" [(ngModel)]="enterprise.email" name="enterpriseEmail" required>
-        </div>
-        <div class="mb-3">
-          <label>Téléphone</label>
-          <input type="text" class="form-control" [(ngModel)]="enterprise.phoneNumber" name="enterprisePhone" required>
-        </div>
-        <div class="mb-3">
-          <label>Adresse</label>
-          <input type="text" class="form-control" [(ngModel)]="enterprise.address" name="enterpriseAddress" required>
-        </div>
+      <hr>
+      <h5 class="text-secondary">Informations sur l'entreprise</h5>
+      <div class="mb-3">
+        <label>Nom</label>
+        <input type="text" class="form-control" [(ngModel)]="enterprise.name" name="enterpriseName" required>
+      </div>
+      <div class="mb-3">
+        <label>Email</label>
+        <input type="email" class="form-control" [(ngModel)]="enterprise.email" name="enterpriseEmail" required>
+      </div>
+      <div class="mb-3">
+        <label>Téléphone</label>
+        <input type="text" class="form-control" [(ngModel)]="enterprise.phoneNumber" name="enterprisePhone" required>
+      </div>
+      <div class="mb-3">
+        <label>Adresse</label>
+        <input type="text" class="form-control" [(ngModel)]="enterprise.address" name="enterpriseAddress" required>
       </div>
 
       <hr>
-      <h5 class="text-secondary">Informations utilisateur</h5>
+      <h5 class="text-secondary">Informations administrateur</h5>
       <div class="mb-3">
         <label>Prénom</label>
         <input type="text" class="form-control" [(ngModel)]="user.firstname" name="firstname" required>

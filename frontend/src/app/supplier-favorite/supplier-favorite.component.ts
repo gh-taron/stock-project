@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
   selector: 'app-supplier-favorite',
   templateUrl: './supplier-favorite.component.html',
   styleUrl: './supplier-favorite.component.css',
-  standalone : false
+  standalone: false
 })
 export class SupplierFavoriteComponent {
   suppliers: any[] = [];
@@ -15,17 +15,23 @@ export class SupplierFavoriteComponent {
 
   constructor(private router: Router) {}
 
-  ngOnInit(): void {
+  async ngOnInit(): Promise<void> {
     this.idEnterprise = this.getEnterpriseId();
     if (!this.idEnterprise) return;
 
-    fetch(`http://localhost:8082/users/favoriteSuppliers/${this.idEnterprise}`)
-      .then(res => res.json())
-      .then(data => {
-        this.suppliers = data;
-        this.filteredSuppliers = data;
-      })
-      .catch(err => console.error('Erreur de récupération des favoris', err));
+    try {
+      const idsRes = await fetch(`http://localhost:8082/users/favoriteSupplierIds/${this.idEnterprise}`);
+      const ids: number[] = await idsRes.json();
+
+      const suppliers = await Promise.all(
+        ids.map(id => fetch(`http://localhost:8083/enterprises/${id}`).then(r => r.json()))
+      );
+
+      this.suppliers = suppliers;
+      this.filteredSuppliers = suppliers;
+    } catch (err) {
+      console.error('Erreur de récupération des favoris', err);
+    }
   }
 
   getEnterpriseId(): number {
@@ -61,6 +67,6 @@ export class SupplierFavoriteComponent {
 
 
   voirProduits(idFournisseur: number) {
-    this.router.navigate(['/produits-fournisseur', idFournisseur]);
+    this.router.navigate(['/products-supplier', idFournisseur]);
   }
 }

@@ -3,8 +3,6 @@ package com.taron.users;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.taron.users.models.FavoriteSupplier;
 import com.taron.users.models.User;
-import jakarta.websocket.server.PathParam;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -31,11 +29,12 @@ public class UsersController {
     public User createOne(@RequestBody User user){
         return this.service.createOne(user);
     }
-    
+
     @GetMapping("/existsByPhone/{phone}")
-    public boolean existsByPhoneNumber(@PathVariable  String phone){
+    public boolean existsByPhoneNumber(@PathVariable String phone){
         return this.service.existsByPhoneNumber(phone);
     }
+
     @GetMapping("/{id}")
     public Optional<User> findById(@PathVariable int id){
         return this.service.findById(id);
@@ -83,15 +82,9 @@ public class UsersController {
         return ResponseEntity.ok(updated);
     }
 
-
-    @GetMapping("/getAllSuppliers")
-    List<User> getAllSuppliers(){
-        return this.service.getAllSuppliers();
-    }
-
-    @GetMapping("/favoriteSuppliers/{idEnterprise}")
-    public List<User> getFavoriteSuppliers(@PathVariable Integer idEnterprise) {
-        return service.getFavoriteSuppliers(idEnterprise);
+    @GetMapping("/favoriteSupplierIds/{idEnterprise}")
+    public List<Integer> getFavoriteSupplierIds(@PathVariable Integer idEnterprise) {
+        return service.getFavoriteSupplierIds(idEnterprise);
     }
 
     @PostMapping("/favoriteSuppliers/addOne")
@@ -105,8 +98,4 @@ public class UsersController {
         service.removeFavorite(fav.getIdEnterprise(), fav.getIdSupplier());
         return ResponseEntity.noContent().build();
     }
-
-
-
-
 }
