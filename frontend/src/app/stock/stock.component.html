@@ -9,7 +9,7 @@
     </div>
   </div>
 
-  <div class="row row-cols-1 row-cols-md-3 g-4">
+  <div class="row row-cols-1 row-cols-md-3 g-4" *ngIf="enterpriseType === 'supplier'">
     <div class="col-md-4">
       <div class="card h-100 p-4 shadow-sm" *ngIf="!isAdding" (click)="isAdding = true" style="cursor: pointer;">
         <div class="d-flex flex-column align-items-center justify-content-center h-100">
@@ -61,6 +61,13 @@
           <p>Quantité : {{ product.quantity }}</p>
         </div>
       </div>
+    </div>
+   </div>
+</div>
+<div *ngIf="filteredStocks.length === 0" class="col">
+  <div>
+    <div class="position-absolute top-50 start-50 translate-middle">
+      <h3 class="text-muted mb-3">Aucun produit dans votre stock</h3>
     </div>
   </div>
 </div>
