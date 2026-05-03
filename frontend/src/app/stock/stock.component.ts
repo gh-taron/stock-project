@@ -24,10 +24,10 @@ export class StockComponent {
   editProductData: any = { name: '', type: '', description: '', quantity: 0 };
 
   idEnterprise: number = 0;
+  enterpriseType: string | null = localStorage.getItem('enterpriseType') || sessionStorage.getItem('enterpriseType') ;
 
   ngOnInit(): void {
     this.idEnterprise = this.getEnterpriseId();
-    if (!this.idEnterprise) return;
     this.fetchProductsAndStocks();
   }
 
@@ -44,6 +44,8 @@ export class StockComponent {
       .then(([products, stocks]) => {
         this.products = products;
         this.stocks = stocks;
+        console.log("Products:", this.products);
+        console.log("Stocks:", this.stocks);
         this.mergeProductQuantities();
       })
       .catch(err => console.error("Erreur lors de la récupération des données :", err));
