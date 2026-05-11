@@ -1,0 +1,53 @@
+<div class="container my-5">
+  <h2 class="mb-4">Mes commandes</h2>
+
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col" *ngFor="let order of orders">
+      <div class="card h-100 bg-dark text-white shadow-sm p-3 d-flex flex-column justify-content-between" style="min-height: 200px;">
+
+        <div class="d-flex justify-content-between align-items-center mb-2">
+          <span class="fw-bold">Commande #{{ order.id }}</span>
+          <span [ngClass]="getStateBadgeClass(order.state)">{{ order.state }}</span>
+        </div>
+
+        <small class="text-muted mb-2">
+          <i class="bi bi-calendar-event"></i>
+          {{ order.createdAt | date:'dd/MM/yyyy HH:mm' }}
+        </small>
+
+        <div class="mb-2">
+          <p class="mb-1 small text-uppercase text-secondary">
+            {{ enterpriseType === 'supplier' ? 'Client' : 'Fournisseur' }}
+          </p>
+          <h6 class="fw-bold">{{ order.contactName }}</h6>
+        </div>
+
+        <div class="mb-2">
+          <p class="mb-1 small text-uppercase text-secondary">
+            Produits ({{ order.details.length }})
+          </p>
+          <ul class="list-unstyled mb-0">
+            <li *ngFor="let detail of order.details">
+              <i class="bi bi-box-seam"></i>
+              {{ detail.productName }} — <span class="fw-bold">x{{ detail.quantity }}</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="mt-auto pt-2 border-top border-secondary" *ngIf="enterpriseType === 'supplier'">
+          <label class="small text-secondary mb-1">Statut</label>
+          <select class="form-select form-select-sm" [(ngModel)]="order.state" (change)="updateState(order)">
+            <option *ngFor="let s of states" [value]="s">{{ s }}</option>
+          </select>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="orders.length === 0">
+  <div class="position-absolute top-50 start-50 translate-middle">
+    <h3 class="text-muted mb-3">Aucune commande</h3>
+  </div>
+</div>
