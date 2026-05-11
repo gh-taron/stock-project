@@ -9,8 +9,8 @@
     </div>
   </div>
 
-  <div class="row row-cols-1 row-cols-md-3 g-4" *ngIf="enterpriseType === 'supplier'">
-    <div class="col-md-4">
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col-md-4" *ngIf="enterpriseType === 'supplier'">
       <div class="card h-100 p-4 shadow-sm" *ngIf="!isAdding" (click)="isAdding = true" style="cursor: pointer;">
         <div class="d-flex flex-column align-items-center justify-content-center h-100">
           <div class="bg-light d-flex align-items-center justify-content-center rounded-circle mb-3" style="width: 70px; height: 70px;">

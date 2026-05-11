@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="df140352-59c6-4583-865c-0a4353785940" name="Changes" comment="refactor data model and clean up codebase">
+    <list default="true" id="df140352-59c6-4583-865c-0a4353785940" name="Changes" comment="update supplier stock display">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/products-supplier/products-supplier.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/products-supplier/products-supplier.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/stocks/src/main/java/com/taron/stocks/StocksController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/stocks/src/main/java/com/taron/stocks/StocksController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/stocks/src/main/java/com/taron/stocks/StocksService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/stocks/src/main/java/com/taron/stocks/StocksService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/products-supplier/products-supplier.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/products-supplier/products-supplier.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/stock/stock.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/stock/stock.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/stock/stock.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/stock/stock.component.ts" afterDir="false" />
     </list>
@@ -16,7 +18,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="286" />
+    <option name="cachedIndexableFilesCount" value="295" />
     <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="FileTemplateManagerImpl">
@@ -64,59 +66,59 @@
     <option name="showLibraryContents" value="true" />
     <option name="showMembers" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "HTTP Request.All in enterprises.executor": "Run",
-    "HTTP Request.authentications | Login an user.executor": "Run",
-    "HTTP Request.authentications | Register new user.executor": "Run",
-    "HTTP Request.enterprises | Create an enterprise.executor": "Run",
-    "HTTP Request.enterprises | Get an entrerprise by ID.executor": "Run",
-    "HTTP Request.enterprises | Update Enterprise (PATCH).executor": "Run",
-    "HTTP Request.users | Create new user.executor": "Run",
-    "HTTP Request.users | Delete an user.executor": "Run",
-    "HTTP Request.users | Get user by email.executor": "Run",
-    "HTTP Request.users | Get user by id.executor": "Run",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.MCP Project settings loaded": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Spring Boot.AuthenticationsApplication.executor": "Run",
-    "Spring Boot.EnterprisesApplication.executor": "Run",
-    "Spring Boot.EurekaServerApplication.executor": "Run",
-    "Spring Boot.OrdersApplication.executor": "Run",
-    "Spring Boot.ProductsApplication.executor": "Run",
-    "Spring Boot.StocksApplication.executor": "Run",
-    "Spring Boot.SuppliersApplication.executor": "Run",
-    "Spring Boot.UsersApplication.executor": "Run",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "SDKs",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "run.configurations.included.in.services": "true",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "ts.external.directory.path": "C:\\Users\\taron\\Desktop\\projet_perso\\frontend\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;HTTP Request.All in enterprises.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.authentications | Login an user.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.authentications | Register new user.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.enterprises | Create an enterprise.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.enterprises | Get an entrerprise by ID.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.enterprises | Update Enterprise (PATCH).executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.users | Create new user.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.users | Delete an user.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.users | Get user by email.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.users | Get user by id.executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Spring Boot.AuthenticationsApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.EnterprisesApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.EurekaServerApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.OrdersApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.ProductsApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.StocksApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.SuppliersApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Spring Boot.UsersApplication.executor&quot;: &quot;Run&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;SDKs&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\taron\\Desktop\\projet_perso\\frontend\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -146,7 +148,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.StocksApplication">
+  <component name="RunManager" selected="Spring Boot.UsersApplication">
     <configuration name="authentications | Login an user" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/backend/authentications/src/test/authentications.http" index="2" runType="Run single request">
       <method v="2" />
     </configuration>
@@ -306,7 +308,8 @@
       <workItem from="1777382806641" duration="6928000" />
       <workItem from="1777642127872" duration="95000" />
       <workItem from="1777648228716" duration="4459000" />
-      <workItem from="1777813752247" duration="5473000" />
+      <workItem from="1777813752247" duration="5685000" />
+      <workItem from="1778502327954" duration="3214000" />
     </task>
     <task id="LOCAL-00001" summary="little corrections">
       <option name="closed" value="true" />
@@ -324,7 +327,15 @@
       <option name="project" value="LOCAL" />
       <updated>1777391517272</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="update supplier stock display">
+      <option name="closed" value="true" />
+      <created>1777822358811</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1777822358811</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -345,7 +356,8 @@
     <MESSAGE value="added confirmation pop-up before deleting user" />
     <MESSAGE value="little corrections" />
     <MESSAGE value="refactor data model and clean up codebase" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor data model and clean up codebase" />
+    <MESSAGE value="update supplier stock display" />
+    <option name="LAST_COMMIT_MESSAGE" value="update supplier stock display" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

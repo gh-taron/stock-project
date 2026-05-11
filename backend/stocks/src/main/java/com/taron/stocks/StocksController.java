@@ -26,9 +26,9 @@ public class StocksController {
         return service.getStocksByEnterprise(id);
     }
 
-    @GetMapping("/getStockByEnterpriseAndProduct/{idEnterprise}/{idProduct}")
-    public Stock getStockByEnterpriseAndProduct(@PathVariable int idEnterprise, @PathVariable int idProduct){
-        return this.service.getStockByEnterpriseAndProduct(idEnterprise, idProduct);
+    @GetMapping("/getStockBySupplierEnterpriseAndProduct/{idEnterprise}/{idProduct}")
+    public Stock getStockBySupplierEnterpriseAndProduct(@PathVariable int idEnterprise, @PathVariable int idProduct){
+        return this.service.getStockBySupplierEnterpriseAndProduct(idEnterprise, idProduct);
     }
 
     @PatchMapping("/updateStock/{id}")

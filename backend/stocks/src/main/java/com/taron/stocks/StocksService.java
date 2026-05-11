@@ -32,7 +32,7 @@ public class StocksService {
                 .orElseThrow(() -> new RuntimeException("Stock introuvable"));
     }
 
-    public Stock getStockByEnterpriseAndProduct(int idEnterprise, int idProduct){
+    public Stock getStockBySupplierEnterpriseAndProduct(int idEnterprise, int idProduct){
         return this.repository.findByIdEnterpriseAndIdProduct(idEnterprise, idProduct);
     }
 }

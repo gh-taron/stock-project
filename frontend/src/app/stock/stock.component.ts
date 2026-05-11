@@ -37,26 +37,25 @@ export class StockComponent {
   }
 
   fetchProductsAndStocks(): void {
-    Promise.all([
-      fetch(`http://localhost:8084/products/getAllByEnterprise/${this.idEnterprise}`).then(res => res.json()),
-      fetch(`http://localhost:8087/stocks/getStocksByEnterprise/${this.idEnterprise}`).then(res => res.json())
-    ])
-      .then(([products, stocks]) => {
-        this.products = products;
+    fetch(`http://localhost:8087/stocks/getStocksByEnterprise/${this.idEnterprise}`)
+      .then(res => res.json())
+      .then((stocks: any[]) => {
         this.stocks = stocks;
-        console.log("Products:", this.products);
-        console.log("Stocks:", this.stocks);
-        this.mergeProductQuantities();
+        return Promise.all(
+          stocks.map(stock =>
+            fetch(`http://localhost:8084/products/${stock.idProduct}`)
+              .then(res => res.json())
+              .then(product => ({ ...product, quantity: stock.quantity }))
+          )
+        );
+      })
+      .then(products => {
+        this.products = products;
+        this.filteredStocks = [...this.products].filter(p => p.active);
+        console.log(this.products);
+        console.log(this.stocks);
       })
       .catch(err => console.error("Erreur lors de la récupération des données :", err));
-  }
-
-  mergeProductQuantities(): void {
-    this.products.forEach(prod => {
-      const stock = this.stocks.find(s => s.idProduct === prod.id);
-      prod.quantity = stock ? stock.quantity : 0;
-    });
-    this.filteredStocks = [...this.products].filter(p => p.active);
   }
 
   filterStocks(): void {
