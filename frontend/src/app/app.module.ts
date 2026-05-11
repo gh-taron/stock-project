@@ -15,6 +15,7 @@ import { SupplierComponent } from './supplier/supplier.component';
 import { SupplierFavoriteComponent } from './supplier-favorite/supplier-favorite.component';
 import { StockComponent } from './stock/stock.component';
 import { ProductsSupplierComponent } from './products-supplier/products-supplier.component';
+import { OrdersComponent } from './orders/orders.component';
 import { MatDialogModule } from '@angular/material/dialog';
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     SupplierComponent,
     SupplierFavoriteComponent,
     StockComponent,
-    ProductsSupplierComponent
+    ProductsSupplierComponent,
+    OrdersComponent
   ],
   imports: [
     BrowserModule,

@@ -35,7 +35,7 @@ export class ProductsSupplierComponent implements OnInit {
 }
 
   getQuantiteDisponible(idProduct: number): Promise<{ quantity: number }> {
-    return fetch(`http://localhost:8087/stocks/getStockBySupplierEnterpriseAndProduct/${this.idSupplier}/${idProduct}`)
+    return fetch(`http://localhost:8086/stocks/getStockBySupplierEnterpriseAndProduct/${this.idSupplier}/${idProduct}`)
       .then(res => res.ok ? res.json() : null)
       .then(stock => ({
         quantity: typeof stock?.quantity === 'number' ? stock.quantity : 0
@@ -66,7 +66,7 @@ export class ProductsSupplierComponent implements OnInit {
       ]
     };
 
-    fetch("http://localhost:8086/orders", {
+    fetch("http://localhost:8085/orders", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(order)

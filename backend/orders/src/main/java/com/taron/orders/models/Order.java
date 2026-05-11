@@ -3,6 +3,7 @@ package com.taron.orders.models;
 import jakarta.persistence.*;
 import lombok.*;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name = "orders", schema = "stock_project")
@@ -29,6 +30,9 @@ public class Order {
 
     @Column(name = "state", nullable = false, length = 50)
     private String state;
+
+    @Transient
+    private List<OrderDetail> products;
 
     @PrePersist
     public void prePersist() {

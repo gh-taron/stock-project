@@ -4,12 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="df140352-59c6-4583-865c-0a4353785940" name="Changes" comment="update supplier stock display">
+    <list default="true" id="df140352-59c6-4583-865c-0a4353785940" name="Changes" comment="Fix stock display for buyers and refactor product fetch logic">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/stocks/src/main/java/com/taron/stocks/StocksController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/stocks/src/main/java/com/taron/stocks/StocksController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/stocks/src/main/java/com/taron/stocks/StocksService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/stocks/src/main/java/com/taron/stocks/StocksService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/orders/src/main/java/com/taron/orders/OrdersController.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/orders/src/main/java/com/taron/orders/OrdersController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/orders/src/main/java/com/taron/orders/OrdersService.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/orders/src/main/java/com/taron/orders/OrdersService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/orders/src/main/java/com/taron/orders/models/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/orders/src/main/java/com/taron/orders/models/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/orders/src/main/java/com/taron/orders/repositories/OrderDetailsRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/backend/orders/src/main/java/com/taron/orders/repositories/OrderDetailsRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/orders/src/test/orders.http" beforeDir="false" afterPath="$PROJECT_DIR$/backend/orders/src/test/orders.http" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/app.routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/app.routes.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/products-supplier/products-supplier.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/products-supplier/products-supplier.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/stock/stock.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/stock/stock.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/stock/stock.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/stock/stock.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -309,7 +314,7 @@
       <workItem from="1777642127872" duration="95000" />
       <workItem from="1777648228716" duration="4459000" />
       <workItem from="1777813752247" duration="5685000" />
-      <workItem from="1778502327954" duration="3214000" />
+      <workItem from="1778502327954" duration="6479000" />
     </task>
     <task id="LOCAL-00001" summary="little corrections">
       <option name="closed" value="true" />
@@ -335,7 +340,15 @@
       <option name="project" value="LOCAL" />
       <updated>1777822358811</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Fix stock display for buyers and refactor product fetch logic">
+      <option name="closed" value="true" />
+      <created>1778506208899</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1778506208899</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -357,7 +370,8 @@
     <MESSAGE value="little corrections" />
     <MESSAGE value="refactor data model and clean up codebase" />
     <MESSAGE value="update supplier stock display" />
-    <option name="LAST_COMMIT_MESSAGE" value="update supplier stock display" />
+    <MESSAGE value="Fix stock display for buyers and refactor product fetch logic" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix stock display for buyers and refactor product fetch logic" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

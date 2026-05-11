@@ -1,8 +1,10 @@
 package com.taron.orders;
 
 import com.taron.orders.models.Order;
+import com.taron.orders.models.OrderDetail;
 import com.taron.orders.repositories.OrderDetailsRepository;
 import com.taron.orders.repositories.OrdersRepository;
+import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -17,8 +19,21 @@ public class OrdersService {
         this.orderDetailsRepository = orderDetailsRepository;
     }
 
-    public Order createOne(Order order){
-        return this.repository.save(order);
+    @Transactional
+    public Order createOne(Order order) {
+        List<OrderDetail> products = order.getProducts();
+        Order saved = this.repository.save(order);
+        if (products != null) {
+            for (OrderDetail detail : products) {
+                detail.setIdOrder(saved.getId());
+                orderDetailsRepository.save(detail);
+            }
+        }
+        return saved;
+    }
+
+    public List<OrderDetail> getDetailsByOrderId(int orderId) {
+        return orderDetailsRepository.findByIdOrder(orderId);
     }
 
     public Order updateState(Order order){

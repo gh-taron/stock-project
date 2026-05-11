@@ -1,6 +1,7 @@
 package com.taron.orders;
 
 import com.taron.orders.models.Order;
+import com.taron.orders.models.OrderDetail;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -39,6 +40,11 @@ public class OrdersController {
     @GetMapping("/{id}")
     public Order getOne(@PathVariable int id){
         return this.service.getOneById(id);
+    }
+
+    @GetMapping("/{id}/details")
+    public List<OrderDetail> getDetails(@PathVariable int id){
+        return this.service.getDetailsByOrderId(id);
     }
 
     @PatchMapping("/{id}")

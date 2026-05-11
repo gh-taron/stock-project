@@ -37,7 +37,7 @@ export class StockComponent {
   }
 
   fetchProductsAndStocks(): void {
-    fetch(`http://localhost:8087/stocks/getStocksByEnterprise/${this.idEnterprise}`)
+    fetch(`http://localhost:8086/stocks/getStocksByEnterprise/${this.idEnterprise}`)
       .then(res => res.json())
       .then((stocks: any[]) => {
         this.stocks = stocks;
@@ -96,7 +96,7 @@ export class StockComponent {
           quantity: this.quantity
         };
 
-        return fetch('http://localhost:8087/stocks', {
+        return fetch('http://localhost:8086/stocks', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(stock)
@@ -170,7 +170,7 @@ export class StockComponent {
         const stock = this.stocks.find(s => s.idProduct === updatedProduct.id);
         if (!stock) throw new Error("Stock introuvable pour ce produit.");
 
-        return fetch(`http://localhost:8087/stocks/updateStock/${stock.id}`, {
+        return fetch(`http://localhost:8086/stocks/updateStock/${stock.id}`, {
           method: 'PATCH',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ quantity: this.editProductData.quantity })
