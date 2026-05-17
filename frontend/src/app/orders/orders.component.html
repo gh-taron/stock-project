@@ -41,6 +41,22 @@
           </select>
         </div>
 
+        <div class="mt-auto pt-2 border-top border-secondary" *ngIf="enterpriseType === 'buyer'">
+          <button
+            *ngIf="order.state === 'pending' || order.state === 'confirmed'"
+            class="btn btn-outline-danger btn-sm w-100"
+            (click)="cancelOrder(order)">
+            <i class="bi bi-x-circle"></i> Annuler la commande
+          </button>
+
+          <button
+            *ngIf="order.state === 'delivered'"
+            class="btn btn-outline-warning btn-sm w-100"
+            (click)="returnOrder(order)">
+            <i class="bi bi-arrow-counterclockwise"></i> Demander un retour
+          </button>
+        </div>
+
       </div>
     </div>
   </div>
@@ -49,5 +65,26 @@
 <div *ngIf="orders.length === 0">
   <div class="position-absolute top-50 start-50 translate-middle">
     <h3 class="text-muted mb-3">Aucune commande</h3>
+  </div>
+</div>
+
+<!-- Modale de confirmation -->
+<div class="modal fade show d-block" tabindex="-1" *ngIf="confirmModal.open" style="background-color: rgba(0,0,0,0.5);">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">{{ confirmModal.title }}</h5>
+        <button type="button" class="btn-close" (click)="closeConfirm()"></button>
+      </div>
+      <div class="modal-body">
+        <p class="mb-0">{{ confirmModal.message }}</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="closeConfirm()">Annuler</button>
+        <button type="button" class="btn" [ngClass]="confirmModal.confirmClass" (click)="confirmAction()">
+          {{ confirmModal.confirmLabel }}
+        </button>
+      </div>
+    </div>
   </div>
 </div>

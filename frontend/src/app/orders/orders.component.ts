@@ -12,7 +12,16 @@ export class OrdersComponent implements OnInit {
   idUser: number = 0;
   idEnterprise: number = 0;
 
-  readonly states = ['pending', 'confirmed', 'shipped', 'delivered', 'cancelled'];
+  readonly states = ['pending', 'confirmed', 'shipped', 'delivered', 'cancelled', 'return_requested'];
+
+  confirmModal: { open: boolean, title: string, message: string, confirmLabel: string, confirmClass: string, onConfirm: () => void } = {
+    open: false,
+    title: '',
+    message: '',
+    confirmLabel: 'Confirmer',
+    confirmClass: 'btn-primary',
+    onConfirm: () => {}
+  };
 
   ngOnInit(): void {
     this.idUser = Number(localStorage.getItem('idUser') || sessionStorage.getItem('idUser'));
@@ -61,6 +70,51 @@ export class OrdersComponent implements OnInit {
       .catch(() => alert('Erreur lors de la mise à jour du statut'));
   }
 
+  cancelOrder(order: any): void {
+    this.openConfirm({
+      title: 'Annuler la commande',
+      message: `Êtes-vous sûr de vouloir annuler la commande #${order.id} ?`,
+      confirmLabel: 'Oui, annuler',
+      confirmClass: 'btn-danger',
+      onConfirm: () => {
+        order.state = 'cancelled';
+        this.updateState(order);
+      }
+    });
+  }
+
+  returnOrder(order: any): void {
+    this.openConfirm({
+      title: 'Demander un retour',
+      message: `Souhaitez-vous demander un retour pour la commande #${order.id} ?`,
+      confirmLabel: 'Envoyer la demande',
+      confirmClass: 'btn-warning',
+      onConfirm: () => {
+        fetch(`http://localhost:8085/orders/${order.id}`, {
+          method: 'PATCH',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ state: 'return_requested' })
+        })
+          .then(res => res.json())
+          .then(updated => order.state = updated.state)
+          .catch(() => alert('Erreur lors de la demande de retour'));
+      }
+    });
+  }
+
+  openConfirm(opts: { title: string, message: string, confirmLabel: string, confirmClass: string, onConfirm: () => void }) {
+    this.confirmModal = { open: true, ...opts };
+  }
+
+  closeConfirm() {
+    this.confirmModal.open = false;
+  }
+
+  confirmAction() {
+    this.confirmModal.onConfirm();
+    this.closeConfirm();
+  }
+
   getStateBadgeClass(state: string): string {
     switch (state) {
       case 'pending':   return 'badge bg-warning text-dark';
@@ -68,6 +122,7 @@ export class OrdersComponent implements OnInit {
       case 'shipped':   return 'badge bg-info text-dark';
       case 'delivered': return 'badge bg-success';
       case 'cancelled': return 'badge bg-danger';
+      case 'return_requested': return 'badge bg-warning text-dark';
       default:          return 'badge bg-secondary';
     }
   }
